@@ -1,0 +1,7 @@
+; Example Plugin.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Example Plugin"
+DESCRIPTION  'Example Plugin Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

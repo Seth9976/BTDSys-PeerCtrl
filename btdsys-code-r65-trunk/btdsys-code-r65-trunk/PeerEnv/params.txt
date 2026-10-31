@@ -1,0 +1,26 @@
+GLOBAL
+0 Mode
+ 0 Immediate
+ 1 Absolute
+ 2 Envelope
+1 GetFrom 
+ 0 Left
+ 1 Center
+ 2 Right
+2 Inertia
+
+TRACK
+3 Min
+4 Max
+5 Center
+6 Ampl
+7 ExtentMode
+ 0 MinMax
+ 1 CntAmp
+8 UpdFreq
+9 Track
+
+ATTR
+ SendFreq
+ EnvAtt
+ EnvRel

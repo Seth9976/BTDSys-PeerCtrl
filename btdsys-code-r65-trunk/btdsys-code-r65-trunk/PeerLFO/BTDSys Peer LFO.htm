@@ -1,0 +1,125 @@
+<HTML>
+<HEAD>
+<TITLE>BTDSys Peer LFO</TITLE>
+</HEAD>
+<BODY>
+
+<h1>BTDSys Peer LFO</h1>
+
+<h2>Installation</h2>
+<p>Put <i>BTDSys Peer LFO.dll</i> in your <b>Gear\Generators</b> folder.</p>
+
+<h2>Overview</h2>
+<p>Peer LFO is an LFO (Low Frequency Oscillator) which you can use to
+modulate any parameter of any other Buzz machine.</p>
+
+<ul>
+<li>Add Peer LFO to your song, along with some other machine.</li>
+<li>You don't need to connect anything to Peer LFO in the machine view.</li>
+<li>Right click Peer LFO and select Assign Parameter, then click an unassigned
+track.</li>
+<li>In this dialog, choose the machine and parameter you want to control.</li>
+<li>Click OK, open the Peer LFO parameter window, and switch On/Off to On.</li>
+<li>If you want to control more than one parameter from the same LFO, add more
+tracks to the machine (Pattern view, Ctrl +). Then assign them as above.</li>
+</ul>
+
+<h2>Parameters</h2>
+<h3>Global (machine) parameters</h3>
+<ul>
+<li><b>On/Off</b> - activates or deactivates the machine.</li>
+
+<li><b>Amp</b> - global amplitude, affecting the amplitude of every track.
+Can be used to "fade" the LFO effect in or out.</li>
+
+<li><b>Manual Phase</b> - allows you to manually set the phase (position in 
+the cycle) of the wave.</li>
+
+<li><b>Wave Shape</b> - the type of wave to be used.
+<ul>
+<li><i>Random</i> sets a new value of the parameter at every time interval
+specified by the Rate.</li>
+<li><i>Wander</i> is similar to Random, apart from it travels
+smoothly to the next random vlaue rather than jumping straight to it.</li>
+<li><i>Wavetable</i> uses a user-defined wave stored in the Buzz wavetable.</li>
+<li><i>Min</i>, <i>Max</i> and <i>Center</i> send constant values, the minimum,
+maximum and center of the defined control range respectively. These allow you to
+set the range parameters up while watching the changing values in the controlled
+machine's parameter window.</li>
+<li>The remainder (<i>Sine, Tri</i> etc) are simple oscillator waveforms as you 
+may expect.</li></ul></li>
+
+<li><b>Wave Number</b> - if Wave Shape is set to Wavetable, this is the wave
+to use from the Buzz wavetable. If it's a stereo wave, only the left channel
+will be used.</li>
+
+<li><b>Min Diff</b> - when using Random or Wander modes, this specifies the
+minimum difference between consecutive values. This can be used to guarantee
+a noticable change in the parameter every time interval.</li>
+
+<li><b>Rate</b> - sets either the period (in Ticks/16 or ms) or the frequency
+(in Hz/4096) of the wave.</li>
+
+<li><b>Rate Unit</b> - sets the units of the Rate parameter, either 16ths of
+ticks, milliseconds or 4096ths of Hertz.</li>
+
+<li><b>Inertia</b> - glide time for Amp, Min, Max and Period parameters.</li>
+</ul>
+
+<h3>Track parameters</h3>
+<ul>
+<li><b>Min</b> and <b>Max</b> - the minimum and maximum values of the LFO
+wave (given as a percentage of the controlled parameter's range)</li>
+<li><b>Center</b> and <b>Amplitude</b> - an alternative way of setting
+the LFO's range.</li>
+<li><b>Extent Mode</b> - sets which of min/max and center/amp is used.
+The other is simply ignored.
+Note that from the machine's right-click menu you can synchronise the
+two pairs of values (so they represent equivalent ranges).</li>
+
+<li><b>Update Freq</b> - sets how frequently the LFO actually sends its 
+values to a parameter. When set to "Free", updates will be sent continuously
+if Buzz's "SubTickTiming" is active or on every tick if not.</li>
+
+<li><b>Phase</b> - sets the relative phase offset compared to the "global"
+phase.</li>
+
+<li><b>Track</b> - if you assign to a [T]rack parameter, which track will
+be controlled. If it's set to All, then all the machine's tracks are 
+controlled. If you assign to a [G]lobal parameter, this has no effect.</li>
+</ul>
+
+<p>Attribute <b>Heed Stop Btn</b> defines whether the LFO switches itself
+off when you press the Stop button in Buzz. By default, it is set to 0
+(meaning no, it doesn't).</p>
+
+<h2>Other Notes</h2>
+
+<ul><li>Note that PeerLFO continues to be active, even if it is muted or another
+machine is in solo mode. However, if it is muted when it is loaded (eg because
+you added it while another machine was solo, or because this was its state in
+a loaded song file), it will not initialise itself (ie it will remain inactive)
+until it is un-muted.</li>
+<li>If you import a song file containing machines whose names are already in use
+in the current song, the new machines will be renamed by Buzz. However, any Peer LFO
+machines in the imported song will no longer recognise the renamed machines, and
+will control the "old" named machines which were already in the song. To work around
+this, please make sure you give your machines unique names in all your template files, 
+and don't import a file into itself.</li>
+</ul>
+
+<h2>Contact</h2>
+<p>BTD has left the building. If you find any bugs or have any suggestions, go to
+<a href="http://forums.jeskola.net">http://forums.jeskola.net</a> and pester IXix
+until something happens.<br>
+Latest versions of BTDSys machines can be found at
+<a href="https://sourceforge.net/projects/btdsys/">https://sourceforge.net/projects/btdsys/</a></p>
+
+<p><b><i>Docs and code ©Ed Powley (BTDSys) with occasional random updates by
+Phil Considine (IX)</i></b><br>
+<i>Thanks to everyone who alpha tested this machine, suggested features
+and pointed out bugs, without whom this machine would suck a lot worse</i></p>
+
+
+</BODY>
+</HTML>

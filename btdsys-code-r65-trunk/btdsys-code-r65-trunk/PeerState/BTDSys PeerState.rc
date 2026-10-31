@@ -1,0 +1,265 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BTDSys PeerState.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MACHINESELECTDLG DIALOG DISCARDABLE  0, 0, 150, 231
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Machines/params to include in snapshots:",IDC_STATIC,2,
+                    2,146,11
+    CONTROL         "Tree1",IDC_MACTREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_CHECKBOXES | 
+                    WS_BORDER | WS_TABSTOP,2,15,146,181
+    PUSHBUTTON      "Select All",IDC_SELALL,2,198,46,14
+    PUSHBUTTON      "Select None",IDC_SELNONE,52,198,46,14
+    PUSHBUTTON      "Invert Sel",IDC_SELINVERT,102,198,46,14
+    DEFPUSHBUTTON   "OK",IDOK,2,215,146,14
+END
+
+IDD_DIALOG DIALOGEX 0, 0, 254, 98
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BTDSys PeerState"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_SNAPCOMBO,1,1,252,170,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "- T A K E   S N A P S H O T -",IDC_SNAP,1,42,252,34,0,
+                    WS_EX_CLIENTEDGE
+    EDITTEXT        IDC_NAME,29,15,224,14,ES_AUTOHSCROLL
+    RTEXT           "Name:",IDC_STATIC,1,15,22,14,SS_CENTERIMAGE
+    LTEXT           "In this dialog, you have to click the button above to store a snapshot of parameter states.",
+                    IDC_STATIC,1,78,252,19
+    CONTROL         "Disable restoring of snapshot (useful for overwriting a snapshot)",
+                    IDC_DONTRESTORE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,1,
+                    31,252,10
+END
+
+IDD_OTHERDIALOG DIALOGEX 0, 0, 254, 97
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BTDSys PeerState"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_SNAPCOMBO,1,1,252,170,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_NAME,29,15,224,14,ES_AUTOHSCROLL
+    RTEXT           "Name:",IDC_STATIC,1,15,24,14,SS_CENTERIMAGE
+    PUSHBUTTON      "",IDC_PREV,1,31,123,45,BS_ICON,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "",IDC_NEXT,130,31,123,45,BS_ICON,WS_EX_CLIENTEDGE
+    LTEXT           "In this dialog, changes to parameter states are stored whenever you switch to a different snapshot.",
+                    IDC_STATIC,1,78,252,18
+END
+
+IDD_EDITDIALOG DIALOG DISCARDABLE  0, 0, 387, 188
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Snapshot Manager"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,335,172,50,14
+    LTEXT           "A:",IDC_STATIC,2,2,9,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_COMBOA,12,2,178,235,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "B:",IDC_STATIC,197,2,9,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_COMBOB,207,2,178,235,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Tree2",IDC_TREEA,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,
+                    2,18,188,60
+    CONTROL         "Tree2",IDC_TREEB,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,
+                    197,18,188,60
+    PUSHBUTTON      "Delete A",IDC_DELETE,2,98,92,14
+    PUSHBUTTON      "Copy B to A",IDC_COPY,2,116,92,14
+    PUSHBUTTON      "Swap A and B",IDC_SWAP,98,116,92,14
+    PUSHBUTTON      "Morph A with B",IDC_MORPH,2,134,92,14
+    PUSHBUTTON      "Splice A with B",IDC_SPLICE,98,134,92,14
+    CONTROL         "Slider1",IDC_AMOUNTSLIDER,"msctls_trackbar32",
+                    TBS_AUTOTICKS | WS_TABSTOP,197,134,188,21
+    PUSHBUTTON      "Randomise A",IDC_RANDOMISE,2,152,92,14
+    CTEXT           "50%",IDC_AMOUNTTEXT,197,157,188,8
+    CTEXT           "A            Morph/Splice/Randomise amount:            B",
+                    IDC_STATIC,197,123,188,8
+    EDITTEXT        IDC_MIDINOTEA,2,81,92,14,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_MIDINOTEB,197,81,92,14,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "Recall this snapshot",IDC_SETCURRENTA,98,81,92,14
+    PUSHBUTTON      "Recall this snapshot",IDC_SETCURRENTB,293,81,92,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MACHINESELECTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 148
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 229
+    END
+
+    IDD_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 253
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 97
+    END
+
+    IDD_OTHERDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 253
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 96
+    END
+
+    IDD_EDITDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 385
+        VERTGUIDE, 190
+        VERTGUIDE, 197
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 186
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_PREV                ICON    DISCARDABLE     "prev.ico"
+IDI_NEXT                ICON    DISCARDABLE     "next.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_STATE               BITMAP  DISCARDABLE     "state_images.bmp"
+SKIN                    BITMAP  DISCARDABLE     "skin.bmp"
+SKINLED                 BITMAP  DISCARDABLE     "skinled(0,0).bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// POSITION
+//
+
+SKINLEDPOS POSITION DISCARDABLE 
+BEGIN
+    0x0000
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// COLOR
+//
+
+TEXTCOLOR COLOR DISCARDABLE 
+BEGIN
+    0xffff, "\377" 
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\BTDSys PeerState.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

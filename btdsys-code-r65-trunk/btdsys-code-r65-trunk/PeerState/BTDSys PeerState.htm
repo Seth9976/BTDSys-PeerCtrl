@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>BTDSys PeerState</title>
+	<style type="text/css"><!--
+		body {
+			font-family: arial,helvetica,sans-serif;
+			color: #000000;
+			background: #FFFFFF;
+		}
+		
+		a:link, a:visited, a:active {
+			color: #0000FF;
+			text-decoration: underline;
+		}
+		
+		a:hover {
+			color: #FF0000;
+			text-decoration: none;
+		}
+	--></style>
+</head>
+
+<body>
+<h1>BTDSys PeerState</h1>
+
+<h2>What is it?</h2>
+<p><b>PeerState</b> allows "snapshots" of the parameter states of machines to be captured and restored easily. You can
+switch between up to 128 stored parameter values for several machines at once, with only a couple of clicks, one entry
+in the pattern editor, or one press of a MIDI key.</p>
+
+<h2>Installation</h2>
+<p>Unzip into your Buzz\Gear\Generators\ folder. Add to index.txt if you want, or download an up-to-date index.txt if
+you're lazy.</p>
+
+<h2>Quick-start guide</h2>
+<ul><li>Add PeerState to your song, along with some other machines</li>
+<li>You don't need to connect anything to PeerState in the machine view</li>
+<li>Right click PeerState, and select Machines/Parameters</li>
+<li>In this dialog, place checks next to the machines and parameters you want to control</li>
+<li>Click OK</li>
+<li>Double click PeerState, and play around with the resulting dialog</li></ul>
+
+<h2>Version history</h2>
+<ul>
+<li><b>v1.1:</b> Added snapshot manager window. Fixed crash when loading a song where PeerState controlled another Peer machine.
+Fixed occasional strange behaviour of inertia.
+Fixed side-effects (storing/restoring snapshots) when opening dialogs. Added facility for overwriting a snapshot from the
+'Simple' dialog without first restoring it. Added "What to open on double click" attribute.</li>
+<li><b>v1.0:</b> First public release.</li>
+</ul>
+
+<h2>Parameters</h2>
+<ul><li><b>Snapshot</b> - Choose the current snapshot number.</li>
+<li><b>Inertia</b> - Sets the glide time when changing snapshots.</li></ul>
+
+<h2>Attributes</h2>
+<ul>
+<li><b>MIDI channel</b> - Sets which MIDI channel PeerState will respond to.</li>
+<li><b>MIDI note for taking snapshots</b> - A press of the selected note will cause the current snapshot to be overwritten
+with current parameter values.</li>
+<li><b>Inertia update freq</b> - Sets the resolution with which inertia takes place. Lower values give smoother glides,
+but result in higher CPU load.</li>
+<li><b>What to open on double click</b> - Select what will happen upon double clicking PeerState in the machine view:<br />
+0: PeerState's parameter window<br />
+1: The 'Simple' GUI<br />
+2: The 'A/B' GUI</li>
+</ul>
+
+<h2>MIDI</h2>
+<p>The MIDI support in PeerState works as follows:
+<ul><li>When a MIDI note is pressed, the corresponding numbered snapshot is restored and set as current. For example,
+a press on "Middle C" will call up snapshot number 60.</li>
+<li>In addition, a note may be chosen (in the attributes) to act instead as a "store snapshot" key.</li></ul>
+A table of MIDI note numbers is available <a href="http://www.harmony-central.com/MIDI/Doc/table2.html">by clicking
+here</a>.</p>
+
+<h2>Dialogs</h2>
+<p>There are several dialogs in PeerState, most of which are fairly self-explanatory. But I'll explain them anyway.</p>
+
+<h3>Machines/parameters dialog</h3>
+<p>Here you can choose which parameters you want to include in snapshots. Note that the checkboxes next to machine names
+indicate at-a-glance whether any of that parameters of that machine are selected&mdash;a black tick indicates all parameters are selected, a grey tick indicates some, and no tick indicates none.</p>
+
+<h3>'Simple' GUI</h3>
+<p>This is the dialog brought up by a double-click on the machine. You can use the combo box to call up snapshots, and
+the big button to store current parameter states. An asterisk next to the snapshot in the combo box indicates there is
+a snapshot currently stored in that slot.</p>
+<p>You can use the checkbox in this dialog to prevent a snapshot from being restored when you select it from the combo box.
+This is useful for overwriting a snapshot without having to restore it and reset all your parameter values first.
+
+<h3>'A/B' GUI</h3>
+<p>This is similar to the 'Simple' GUI, but more suited for quickly comparing and tweaking several snapshots. The big
+'Take snapshot' button is replaced with two arrow buttons for selecting snapshots. And whenever you choose a new snapshot
+number, the old one is automatically overwritten with current parameter values before the new one is restored.</p>
+
+<h3>Snapshot manager</h3>
+<p>This dialog, logically enough, allows you to manage your snapshots. Management tasks include copying/swapping/deleting, as well as more complex randomisation and genetic functions.</p>
+
+<p><img src="BTDSys PeerState Snapshot Manager.png" alt="Snapshot manager window" /></p>
+
+<ol type="a">
+<li>You can choose two snapshots (A on the left, and B on the right), and perform editing tasks between them.</li>
+<li>The various parameter values stored in each snapshot are listed here.</li>
+<li>Displays the MIDI note which will corresponds to this snapshot. This cannot be changed.</li>
+<li>Call up the specified snapshot. This works in precisely the same way as the "Snapshot" machine parameter, or the combo boxes in the 'Simple' and 'A/B' GUIs.</li>
+<li>Deletes snapshot A (ie clears all parameter values from it), leaving snapshot B unchanged.</li>
+<li>Overwrites snapshot A with the parameter values from snapshot B, leaving snapshot B unchanged.</li>
+<li>Exchanges all parameter values between snapshots A and B.</li>
+<li>Does a crossfade between the two snapshots, overwriting snapshot A with the results. The amount slider (k) controls the weighting between the two snapshots: if it is at the far left there is no effect, and if it is at the far right the effect is identical to button f.</li>
+<li>Performs a randomised "genetic splice" between the two snapshots, overwriting snapshot A with the results. For each parameter in the snapshot, either the value from snapshot A or the value from snapshot B is used. The amount slider (k) controls the probability of choosing parameters from one snapshot or the other: if it is at the far left there is no effect, and if it is at the far right the effect is identical to button f.</li>
+<li>Applies a random perturbation to the values in snapshot A. Each parameter value is changed by a random amount at most k% of the parameter's range, where k% is the value of slider k. If the slider is at the far left there is no effect, if it is at the far right the effect is similar to the "Random" button in Buzz.</li>
+<li>Controls the amounts or weightings for buttons h, i and j.</li>
+</ol>
+
+<h2>Thanks</h2>
+<p>Thanks to Ronny Pries for the initial idea. Thanks to Polac for inspiration for the snapshot manager (and for his marvellous VST adaptors). Also thanks to noolout, mute, thOke, XionD, wizenwet, ideolog, and everyone else who contributed their support and opinions.</p>
+
+<h2>EOF/legal</h2>
+<p>Docs and code &copy;2003/4 Ed Powley<br />
+<a href="http://btdsys.cjb.net">website (including contact details)</a><br />
+This machine is freeware and freely distributable, provided no money is charged and all files are present and
+unchanged.</p>
+
+</body>
+</html>

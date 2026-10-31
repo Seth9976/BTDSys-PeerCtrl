@@ -1,0 +1,273 @@
+<html>
+<head>
+<title>TITLE</title>
+</head>
+
+<body>
+<h1>BTDSys PeerCtrl Library Tutorial</h1>
+
+<p>This tutorial will show you how to make a basic peer-controlling machine. The full code is included (example.cpp);
+I'll just explain a few of the more important bits. I'm assuming you have a working knowledge of C++ and programming
+Buzz machines - if not then work through some C++ tutorials or textbooks, and Cyanphase's tutorial for Buzz effects,
+then come back. I'm also assuming you've at least seen some of my peer controllers, so you have some idea roughly how
+they work and what they do.</p>
+
+<p>The example machine simply allows the user to control a number of parameters, with inertia. Like a stripped-down
+version of the BTDSys PeerCtrl machine. It might not seem like much, but it'll form the basis for any LFOs, algorithmic
+controllers, piano rolls or whatnot you might write.</p>
+
+<p>Before you start, you need to make sure you link with peerctrl.lib (add it to the same line in the project settings
+where you add mdk.lib) and #include "peerctrl.h".</p>
+
+<p>The heart of peer controllers is the CPeerCtrl object (or objects). You need one of these for every parameter on
+other machines you want to control. They need to be dynamic (since they have to be initialised in Init()) so we'll
+just define an array of pointers in the mi class:
+<pre>
+    CPeerCtrl <font color="black">*</font>ctrl<font color="black">[</font><font color="maroon">128</font><font color="black">]</font>;
+</pre>
+Now we can initialise them, and read data from the Buzz song file if appropriate, in mi::MDKInit()
+<pre>
+<font color="blue">void</font> mi<font color="black">:</font><font color="black">:</font>MDKInit <font color="black">(</font>CMachineDataInput <font color="black">*</font> <font color="blue">const</font> pi<font color="black">)</font>
+<font color="black">{</font>
+    Initialising <font color="black">=</font> <font color="blue">true</font>;
+
+    ThisMac <font color="black">=</font> pCB<font color="black">-</font><font color="black">&#62;</font>GetThisMachine<font color="black">(</font><font color="black">)</font>;
+
+    <font color="blue">for</font> <font color="black">(</font><font color="blue">int</font> t<font color="black">=</font><font color="maroon">0</font>; t<font color="black">&#60;</font><font color="maroon">128</font>; t<font color="black">+</font><font color="black">+</font><font color="black">)</font>
+    <font color="black">{</font>
+        ctrl<font color="black">[</font>t<font color="black">]</font> <font color="black">=</font> <font color="blue">new</font> CPeerCtrl<font color="black">(</font>ThisMac, <font color="blue">this</font><font color="black">)</font>;
+        <font color="blue">if</font> <font color="black">(</font>pi<font color="black">)</font> ctrl<font color="black">[</font>t<font color="black">]</font><font color="black">-</font><font color="black">&#62;</font>ReadFileData<font color="black">(</font>pi<font color="black">)</font>;
+    <font color="black">}</font>
+<font color="black">}</font>
+</pre>
+The Initialising flag is used as a signal to other functions, that they shouldn't do anything yet (since the machine has
+only just loaded, and perhaps the machine it's supposed to control hasn't yet). Trust me, it's necessary if you want to
+avoid crashes on song loads.</p>
+<p>Now to save data into the song file:
+<pre>
+<font color="blue">void</font> mi<font color="black">:</font><font color="black">:</font>MDKSave<font color="black">(</font>CMachineDataOutput <font color="black">*</font> <font color="blue">const</font> po<font color="black">)</font>
+<font color="black">{</font>
+    <font color="blue">for</font> <font color="black">(</font><font color="blue">int</font> t<font color="black">=</font><font color="maroon">0</font>; t<font color="black">&#60;</font><font color="maroon">128</font>; t<font color="black">+</font><font color="black">+</font><font color="black">)</font>
+        ctrl<font color="black">[</font>t<font color="black">]</font><font color="black">-</font><font color="black">&#62;</font>WriteFileData<font color="black">(</font>po<font color="black">)</font>;
+<font color="black">}</font>
+</pre>
+And also we want to erase those CPeerCtrl objects when the machine is destroyed, to avoid memory leaks:
+<pre>
+mi<font color="black">:</font><font color="black">:</font>~mi<font color="black">(</font><font color="black">)</font>
+<font color="black">{</font>
+    <font color="blue">for</font> <font color="black">(</font><font color="blue">int</font> t<font color="black">=</font><font color="maroon">0</font>; t<font color="black">&#60;</font><font color="maroon">128</font>; t<font color="black">+</font><font color="black">+</font><font color="black">)</font>
+        <font color="blue">if</font> <font color="black">(</font>ctrl<font color="black">[</font>t<font color="black">]</font><font color="black">)</font> <font color="blue">delete</font> ctrl<font color="black">[</font>t<font color="black">]</font>;
+<font color="black">}</font>
+</pre></p>
+<p>To calculate the values to send to parameters, we can access and use information about the selected parameter:
+<pre>
+<font color="blue">inline</font> <font color="blue">int</font> GetParamValue<font color="black">(</font>CPeerCtrl <font color="black">*</font>ct, <font color="blue">float</font> val<font color="black">)</font>
+<font color="black">{</font>
+    <font color="blue">const</font> CMachineParameter <font color="black">*</font>mpar <font color="black">=</font> ct<font color="black">-</font><font color="black">&#62;</font>GetParamInfo<font color="black">(</font><font color="black">)</font>;
+    <font color="blue">return</font> mpar<font color="black">-</font><font color="black">&#62;</font>MinValue <font color="black">+</font> <font color="black">(</font><font color="blue">int</font><font color="black">)</font><font color="black">(</font>val <font color="black">*</font> <font color="black">(</font>mpar<font color="black">-</font><font color="black">&#62;</font>MaxValue <font color="black">-</font>mpar<font color="black">-</font><font color="black">&#62;</font>MinValue<font color="black">)</font><font color="black">)</font>;
+<font color="black">}</font>
+</pre>
+<p>This code converts a float value between 0.0f and 1.0f into an int value in the range of the parameter.</p>
+<p>Now onto the Tick() function. The main part is as follows:
+<pre>
+    <font color="blue">if</font> <font color="black">(</font><font color="black">!</font>Initialising<font color="black">)</font>
+</pre>
+Remember, we need to know the song is fully loaded before we start trying to control other machines
+(Buzz tends to start calling machine functions like Tick() before the song is fully loaded).
+<pre>
+    <font color="black">{</font>
+        <font color="blue">for</font> <font color="black">(</font><font color="blue">int</font> t<font color="black">=</font><font color="maroon">0</font>; t<font color="black">&#60;</font>numTracks; t<font color="black">+</font><font color="black">+</font><font color="black">)</font>
+        <font color="black">{</font>
+            ctrl<font color="black">[</font>t<font color="black">]</font><font color="black">-</font><font color="black">&#62;</font>CheckMachine<font color="black">(</font><font color="black">)</font>;
+</pre>
+<b>It is important to call CheckMachine() every tick</b>. What CheckMachine() does is check if the machine we're
+controlling has been renamed, deleted etc, and adjust assignment settings accordingly.
+<pre>
+            <font color="blue">if</font> <font color="black">(</font>tval<font color="black">[</font>t<font color="black">]</font>.Value <font color="black">!</font><font color="black">=</font> paraValue.NoValue<font color="black">)</font>
+            <font color="black">{</font>
+                tracks<font color="black">[</font>t<font color="black">]</font>.ValTarget <font color="black">=</font> tval<font color="black">[</font>t<font color="black">]</font>.Value <font color="black">/</font> <font color="maroon">65534</font>.0f;
+                tracks<font color="black">[</font>t<font color="black">]</font>.ValStep <font color="black">=</font> <font color="black">(</font>tracks<font color="black">[</font>t<font color="black">]</font>.ValTarget <font color="black">-</font>tracks<font color="black">[</font>t<font color="black">]</font>.ValCurrent<font color="black">)</font> <font color="black">/</font> InertiaLength;
+                tracks<font color="black">[</font>t<font color="black">]</font>.ValCountDown <font color="black">=</font> InertiaLength;
+            <font color="black">}</font>
+</pre>
+This is just your standard inertia code.
+<pre>
+            <font color="blue">if</font> <font color="black">(</font>ctrl<font color="black">[</font>t<font color="black">]</font><font color="black">-</font><font color="black">&#62;</font>GotParam<font color="black">(</font><font color="black">)</font> <font color="black">&</font><font color="black">&</font> tracks<font color="black">[</font>t<font color="black">]</font>.ValCountDown <font color="black">&#62;</font> <font color="maroon">0</font><font color="black">)</font>
+                ctrl<font color="black">[</font>t<font color="black">]</font><font color="black">-</font><font color="black">&#62;</font>ControlChange_NextTick<font color="black">(</font><font color="maroon">0</font>, GetParamValue<font color="black">(</font>ctrl<font color="black">[</font>t<font color="black">]</font>, tracks<font color="black">[</font>t<font color="black">]</font>.ValCurrent<font color="black">)</font><font color="black">)</font>;
+</pre>
+<b>You must check GotParam() before trying to change parameter values or get
+parameter info.</b> If you don't, your machine <i>will</i> crash.</p>
+<p>The PeerCtrl library has two methods of control change: NextTick (which is a standard Buzz feature, and updates
+sliders on screen, but only changes controls once a tick) and Immediate (which is a hack, doesn't move sliders, but can
+change controls much faster than once a tick). Typically a machine should use both, to combine accurate timing and visual
+feedback.</p>
+<p>You could replace the 0 in the ControlChange_NextTick() call to choose a target track
+number (only applies if you're controlling a track parameter). The second argument is the value to use.</p>
+<p>That's the end of the Tick() procedure. Now for the Work() function.</p>
+<p>The Work() function doesn't generate any audio, but it performs control changes between ticks. Also Buzz won't call
+Work() until the song is fully loaded, so we can clear the Initialising flag.
+<pre>
+<font color="blue">bool</font> mi<font color="black">:</font><font color="black">:</font>MDKWork<font color="black">(</font><font color="blue">float</font> <font color="black">*</font>psamples, <font color="blue">int</font> numsamples, <font color="blue">const</font> <font color="blue">int</font> mode<font color="black">)</font>
+<font color="black">{</font>
+    <font color="blue">for</font> <font color="black">(</font><font color="blue">int</font> t<font color="black">=</font><font color="maroon">0</font>; t<font color="black">&#60;</font>numTracks; t<font color="black">+</font><font color="black">+</font><font color="black">)</font>
+    <font color="black">{</font>
+        <font color="blue">if</font> <font color="black">(</font>tracks<font color="black">[</font>t<font color="black">]</font>.ValCountDown <font color="black">&#62;</font> <font color="maroon">0</font> <font color="black">&</font><font color="black">&</font> ctrl<font color="black">[</font>t<font color="black">]</font><font color="black">-</font><font color="black">&#62;</font>GotParam<font color="black">(</font><font color="black">)</font><font color="black">)</font>
+        <font color="black">{</font>
+            tracks<font color="black">[</font>t<font color="black">]</font>.ValCurrent <font color="black">+</font><font color="black">=</font> tracks<font color="black">[</font>t<font color="black">]</font>.ValStep <font color="black">*</font> numsamples;
+            tracks<font color="black">[</font>t<font color="black">]</font>.ValCountDown <font color="black">-</font><font color="black">=</font> numsamples;
+</pre>
+Here we check that GotParam() function again, then do some standard inertia stuff.
+<pre>
+            <font color="blue">if</font> <font color="black">(</font>tracks<font color="black">[</font>t<font color="black">]</font>.ValCountDown <font color="black">&#60;</font><font color="black">=</font> <font color="maroon">0</font><font color="black">)</font>
+            <font color="black">{</font>
+                tracks<font color="black">[</font>t<font color="black">]</font>.ValCurrent <font color="black">=</font> tracks<font color="black">[</font>t<font color="black">]</font>.ValTarget;
+                ctrl<font color="black">[</font>t<font color="black">]</font><font color="black">-</font><font color="black">&#62;</font>ControlChange_NextTick<font color="black">(</font><font color="maroon">0</font>, GetParamValue<font color="black">(</font>ctrl<font color="black">[</font>t<font color="black">]</font>, tracks<font color="black">[</font>t<font color="black">]</font>.ValCurrent<font color="black">)</font><font color="black">)</font>;
+            <font color="black">}</font>
+</pre>
+Here's what happens if the inertia slide has finished. Note we do a non-hack control change here, to make sure the slider
+on the target machine reflects the final value.</p>
+<p>Now we can send a control change:
+<pre>
+            ctrl<font color="black">[</font>t<font color="black">]</font><font color="black">-</font><font color="black">&#62;</font>ControlChange_Immediate<font color="black">(</font><font color="maroon">0</font>, GetParamValue<font color="black">(</font>ctrl<font color="black">[</font>t<font color="black">]</font>, tracks<font color="black">[</font>t<font color="black">]</font>.ValCurrent<font color="black">)</font><font color="black">)</font>;
+</pre>
+This one won't wait until the next tick to take effect. Doing this is essential for smooth inertia, and also for accurate
+timing in other machines.</p>
+Note that there's no point calling ControlChange_Immediate() more often than once per Work() function, since the control
+changes won't take effect any faster than that. Also calling it too fast can cause excessive CPU usage, since it forces
+execution of the target machine's Tick() function which tends not to be too efficient. A good idea would be to add an
+attribute to slow the control changes down if necessary.</p>
+<p>Now all that's needed is the GUI code for assigning parameters.</p>
+<p>This code is called when the dialog box ends:
+<pre>
+        <font color="blue">char</font> MacName<font color="black">[</font><font color="maroon">128</font><font color="black">]</font>;
+        <font color="blue">char</font> ParName<font color="black">[</font><font color="maroon">255</font><font color="black">]</font>;
+
+        <font color="blue">if</font> <font color="black">(</font>GetDlgItemText<font color="black">(</font>hDlg, IDC_MACHINECOMBO, MacName, <font color="maroon">128</font><font color="black">)</font> <font color="black">!</font><font color="black">=</font> <font color="maroon">0</font><font color="black">)</font>
+        <font color="black">{</font>
+            <font color="blue">int</font> s <font color="black">=</font> SendMessage<font color="black">(</font>GetDlgItem<font color="black">(</font>hDlg,IDC_PARALIST<font color="black">)</font>, 
+                LB_GETCURSEL, <font color="maroon">0</font>, <font color="maroon">0</font><font color="black">)</font>;
+            <font color="blue">if</font> <font color="black">(</font>s <font color="black">!</font><font color="black">=</font> LB_ERR<font color="black">)</font>
+            <font color="black">{</font>
+                SendMessage<font color="black">(</font>GetDlgItem<font color="black">(</font>hDlg,IDC_PARALIST<font color="black">)</font>,
+                    LB_GETTEXT, s, <font color="blue">long</font><font color="black">(</font><font color="black">&</font>ParName<font color="black">)</font><font color="black">)</font>;
+</pre>
+This code just gets the names of the machine and parameter selected. Now we can just assign it as follows:
+<pre>
+                g_ctrl<font color="black">-</font><font color="black">&#62;</font>AssignParameter<font color="black">(</font>MacName, ParName<font color="black">)</font>;
+</pre>
+If no machine or no parameter was selected, we just dump the current assignment:
+<pre>
+            <font color="blue">else</font>
+                g_ctrl<font color="black">-</font><font color="black">&#62;</font>UnassignParameter<font color="black">(</font><font color="black">)</font>;
+        <font color="black">}</font>
+        <font color="blue">else</font>
+            g_ctrl<font color="black">-</font><font color="black">&#62;</font>UnassignParameter<font color="black">(</font><font color="black">)</font>;
+</pre>
+OK, now for the procedure that handles all the Windows messages our dialog is going to receive. First the code done when
+the dialog is first opened:
+<pre>
+    <font color="blue">case</font> WM_INITDIALOG<font color="black">:</font>
+        <font color="blue">char</font> txt<font color="black">[</font><font color="maroon">128</font><font color="black">]</font>;
+        sprintf<font color="black">(</font>txt, <font color="maroon">"%s track %i, current assign: %s"</font>,
+            g_mi<font color="black">-</font><font color="black">&#62;</font>pCB<font color="black">-</font><font color="black">&#62;</font>GetMachineName<font color="black">(</font>g_mi<font color="black">-</font><font color="black">&#62;</font>ThisMac<font color="black">)</font>,
+            g_tracknum,
+            g_ctrl<font color="black">-</font><font color="black">&#62;</font>GetAssignmentString<font color="black">(</font><font color="black">)</font><font color="black">)</font>;
+
+        SetDlgItemText<font color="black">(</font>hDlg, IDC_THISMACINFO, txt<font color="black">)</font>;
+</pre>
+This just puts info on the current assign into a static text box at the top of the dialog. GetAssignmentString() returns
+either "No Assign", or a string in the format "Bass 3->Cutoff".</p>
+<p>The library contains standard functions to get machine and parameter names into combo and list boxes. So let's use
+one of them:
+<pre>
+        g_ctrl<font color="black">-</font><font color="black">&#62;</font>GetMachineNamesToCombo<font color="black">(</font>hDlg, 
+            IDC_MACHINECOMBO, g_mi<font color="black">-</font><font color="black">&#62;</font>pCB<font color="black">-</font><font color="black">&#62;</font>GetMachineName<font color="black">(</font>g_mi<font color="black">-</font><font color="black">&#62;</font>ThisMac<font color="black">)</font><font color="black">)</font>;
+</pre>
+Now if there's already an assignment, we want to have it initially selected in the dialog. The library defines procedures
+for that, too:
+<pre>
+        <font color="blue">if</font> <font color="black">(</font>g_ctrl<font color="black">-</font><font color="black">&#62;</font>GotParam<font color="black">(</font><font color="black">)</font><font color="black">)</font>
+        <font color="black">{</font>
+            <font color="green">//select machine and parameter</font>
+            <font color="blue">if</font> <font color="black">(</font>g_ctrl<font color="black">-</font><font color="black">&#62;</font>SelectMachineInCombo<font color="black">(</font>hDlg, IDC_MACHINECOMBO<font color="black">)</font><font color="black">)</font>
+            <font color="black">{</font>
+                g_ctrl<font color="black">-</font><font color="black">&#62;</font>GetParamNamesToList<font color="black">(</font>
+                    g_ctrl<font color="black">-</font><font color="black">&#62;</font>GetMachine<font color="black">(</font><font color="black">)</font>,
+                    hDlg, IDC_PARALIST, ALLOW_ALL_TYPES <font color="black">|</font> ALLOW_ALL_GROUPS<font color="black">)</font>;
+
+                g_ctrl<font color="black">-</font><font color="black">&#62;</font>SelectParameterInList<font color="black">(</font>hDlg, IDC_PARALIST<font color="black">)</font>;
+            <font color="black">}</font>
+        <font color="black">}</font>
+</pre>
+In the above code, we select the current machine, then get its parameters into the list box, then select the parameter
+in the list box.</p>
+<p>Now we just need to react to the user selecting a machine from the combo box:
+<pre>
+        <font color="blue">case</font> IDC_MACHINECOMBO<font color="black">:</font>
+            <font color="blue">if</font> <font color="black">(</font>HIWORD<font color="black">(</font>wParam<font color="black">)</font> <font color="black">=</font><font color="black">=</font> CBN_SELCHANGE<font color="black">)</font> <font color="green">//selection is changed</font>
+            <font color="black">{</font>
+                <font color="blue">char</font> MacName<font color="black">[</font><font color="maroon">128</font><font color="black">]</font>;
+                
+                <font color="blue">if</font> <font color="black">(</font>GetDlgItemText<font color="black">(</font>hDlg, IDC_MACHINECOMBO, MacName, <font color="maroon">128</font><font color="black">)</font> <font color="black">!</font><font color="black">=</font> <font color="maroon">0</font><font color="black">)</font>
+                <font color="black">{</font>   <font color="green">//ie if a machine is selected</font>
+                    <font color="green">//Populate parameter list</font>
+                    g_ctrl<font color="black">-</font><font color="black">&#62;</font>GetParamNamesToList<font color="black">(</font>
+                        g_mi<font color="black">-</font><font color="black">&#62;</font>pCB<font color="black">-</font><font color="black">&#62;</font>GetMachine<font color="black">(</font>MacName<font color="black">)</font>,
+                        hDlg, IDC_PARALIST, ALLOW_ALL_TYPES <font color="black">|</font> ALLOW_ALL_GROUPS<font color="black">)</font>;
+                <font color="black">}</font>
+                <font color="blue">else</font>
+                    SendMessage<font color="black">(</font>GetDlgItem<font color="black">(</font>hDlg, IDC_PARALIST<font color="black">)</font>, LB_RESETCONTENT, <font color="maroon">0</font>,<font color="maroon">0</font><font color="black">)</font>;
+            <font color="black">}</font>
+</pre>
+What this does is get a list of parameters for the selected machine, or clear the list if no machine was selected. Note
+that it's possible to restrict what parameters are shown (using the ALLOW_ values). Here we allow everything, but you
+might limit it to only notes in tracks, for example. See peerctrl.h for possible values.</p>
+<p>Now we need to get a list of current assigns into
+the machine's submenu when the user right-clicks our machine:
+<pre>
+<font color="blue">void</font> miex<font color="black">:</font><font color="black">:</font>GetSubMenu<font color="black">(</font><font color="blue">int</font> <font color="blue">const</font> i, CMachineDataOutput <font color="black">*</font>pout<font color="black">)</font>
+<font color="black">{</font>
+    <font color="blue">char</font> txt<font color="black">[</font><font color="maroon">128</font><font color="black">]</font>;
+    <font color="blue">for</font> <font color="black">(</font><font color="blue">int</font> t<font color="black">=</font><font color="maroon">0</font>; t<font color="black">&#60;</font>pmi<font color="black">-</font><font color="black">&#62;</font>numTracks; t<font color="black">+</font><font color="black">+</font><font color="black">)</font>
+    <font color="black">{</font>
+        sprintf<font color="black">(</font>txt, <font color="maroon">"%i: %s"</font>, t, pmi<font color="black">-</font><font color="black">&#62;</font>ctrl<font color="black">[</font>t<font color="black">]</font><font color="black">-</font><font color="black">&#62;</font>GetAssignmentString<font color="black">(</font><font color="black">)</font><font color="black">)</font>;
+        pout<font color="black">-</font><font color="black">&#62;</font>Write<font color="black">(</font>txt<font color="black">)</font>;
+    <font color="black">}</font>
+<font color="black">}</font>   
+</pre>
+Fairly self-explanatory, it uses the GetAssignmentString() procedure again. Now we just need to respond to clicks on these
+items:
+<pre>
+<font color="blue">void</font> mi<font color="black">:</font><font color="black">:</font>Command<font color="black">(</font><font color="blue">const</font> <font color="blue">int</font> i<font color="black">)</font>
+<font color="black">{</font>
+    <font color="blue">if</font> <font color="black">(</font>i<font color="black">&#62;</font><font color="black">=</font><font color="maroon">256</font> <font color="black">&</font><font color="black">&</font> i<font color="black">&#60;</font><font color="maroon">512</font><font color="black">)</font>
+    <font color="black">{</font>
+        g_mi <font color="black">=</font> <font color="blue">this</font>;
+        g_tracknum <font color="black">=</font> i<font color="maroon">-256</font>;
+        g_ctrl <font color="black">=</font> ctrl<font color="black">[</font>i<font color="maroon">-256</font><font color="black">]</font>;
+
+        DialogBox<font color="black">(</font>dllInstance, MAKEINTRESOURCE <font color="black">(</font>IDD_ASSIGN<font color="black">)</font>, GetForegroundWindow<font color="black">(</font><font color="black">)</font>, <font color="black">(</font>DLGPROC<font color="black">)</font> <font color="black">&</font>AssignDialog<font color="black">)</font>;
+    <font color="black">}</font>
+<font color="black">}</font>
+</pre>
+We need global copies of the mi and CPeerCtrl objects we are using, for the dialog box procedures.</p>
+<p>OK, aside from some standard Buzz machine stuff you can pick up from other tutorials, that's it.</p>
+
+<hr>
+
+<p>Your idea for a peer controller might not be possible with the library as-is. For example, you might want to
+read parameter values as well as write them, or efficiently control multiple parameters on the same machine. If that's
+the case, <a href="mailto:e@btd2001.freeserve.co.uk">email me</a> with what you've got in mind and I'll probably supply
+the source code.</p>
+
+<p>This tutorial &copy;2003 Ed Powley. <a href="mailto:e@btd2001.freeserve.co.uk">Email me</a> with comments, suggestions,
+problems or corrections.</p>
+
+<p>C++ code formatted into HTML using <a href="http://www.cppdoc.com">CPPDoc</a></p>
+
+
+
+
+
+</body>
+</html>

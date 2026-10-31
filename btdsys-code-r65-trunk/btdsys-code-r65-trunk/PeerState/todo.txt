@@ -1,0 +1,3 @@
+Snap to ticks
+prs import/export
+On/off dialog

@@ -1,0 +1,388 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "BTDSys Groupie DLL\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "BTDSys Groupie\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BTDSys Groupie.DLL\0"
+            VALUE "ProductName", "BTDSys Groupie Dynamic Link Library\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BTDSys Groupie.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_NEW
+    BUTTON      ID_OPENBMX
+    BUTTON      ID_SAVEBMX
+    SEPARATOR
+    BUTTON      ID_VISUALPREFS
+    BUTTON      ID_DUMMY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR             BITMAP  DISCARDABLE     "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ADDMACHINE DIALOG DISCARDABLE  0, 0, 300, 231
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Add machine"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Display:",IDC_STATIC,7,133,27,9
+    CONTROL         "&All machines",IDC_RALL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,40,133,197,10
+    CONTROL         "&Generators only",IDC_RGENS,"Button",BS_AUTORADIOBUTTON,
+                    40,144,197,10
+    CONTROL         "&Effects only",IDC_REFFS,"Button",BS_AUTORADIOBUTTON,40,
+                    155,197,10
+    CONTROL         "&Index.txt tree view",IDC_RRECENT,"Button",
+                    BS_AUTORADIOBUTTON,40,166,197,10
+    CONTROL         "Machine&s whose name contains *all* of the following words:",
+                    IDC_RSEARCH,"Button",BS_AUTORADIOBUTTON,40,177,206,10
+    EDITTEXT        IDC_SEARCHBOX,51,191,242,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,243,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,243,24,50,14
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,
+                    7,7,230,122
+END
+
+IDD_RENAMEDLG DIALOG DISCARDABLE  0, 0, 257, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Rename Machine"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Enter a new name for this machine:",IDC_STATIC,7,7,188,
+                    14
+    EDITTEXT        IDC_EDIT,7,25,188,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,200,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,200,24,50,14
+END
+
+IDD_PARAMDLG DIALOGEX 0, 0, 285, 193
+STYLE WS_POPUP | WS_CAPTION | WS_VSCROLL | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Parameters"
+MENU IDR_PARAMDLGMENU
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+END
+
+IDD_KEYBOARDDLG DIALOGEX 0, 0, 266, 81
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Keyboard"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Octave:",IDC_STATIC,2,2,28,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_OCTAVE,30,2,31,176,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Mode:",IDC_STATIC,77,2,24,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_MODE,101,2,57,176,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Note off",IDC_NOTEOFF,215,2,49,12
+    PUSHBUTTON      "C",IDC_NOTE_C1,2,52,15,27
+    PUSHBUTTON      "C#",IDC_NOTE_CS1,11,20,15,27
+    PUSHBUTTON      "D",IDC_NOTE_D1,21,52,15,27
+    PUSHBUTTON      "D#",IDC_NOTE_DS1,30,20,15,27
+    PUSHBUTTON      "E",IDC_NOTE_E1,40,52,15,27
+    PUSHBUTTON      "F",IDC_NOTE_F1,59,52,15,27
+    PUSHBUTTON      "F#",IDC_NOTE_FS1,68,20,15,27
+    PUSHBUTTON      "G",IDC_NOTE_G1,78,52,15,27
+    PUSHBUTTON      "G#",IDC_NOTE_GS1,87,20,15,27
+    PUSHBUTTON      "A",IDC_NOTE_A1,97,52,15,27
+    PUSHBUTTON      "A#",IDC_NOTE_AS1,106,20,15,27
+    PUSHBUTTON      "B",IDC_NOTE_B1,116,52,15,27
+    PUSHBUTTON      "C",IDC_NOTE_C2,135,52,15,27
+    PUSHBUTTON      "C#",IDC_NOTE_CS2,145,20,15,27
+    PUSHBUTTON      "D",IDC_NOTE_D2,154,52,15,27
+    PUSHBUTTON      "D#",IDC_NOTE_DS2,163,20,15,27
+    PUSHBUTTON      "E",IDC_NOTE_E2,173,52,15,27
+    PUSHBUTTON      "F",IDC_NOTE_F2,192,52,15,27
+    PUSHBUTTON      "F#",IDC_NOTE_FS2,201,20,15,27
+    PUSHBUTTON      "G",IDC_NOTE_G2,211,52,15,27
+    PUSHBUTTON      "G#",IDC_NOTE_GS2,221,20,15,27
+    PUSHBUTTON      "A",IDC_NOTE_A2,230,52,15,27
+    PUSHBUTTON      "A#",IDC_NOTE_AS2,239,20,15,27
+    PUSHBUTTON      "B",IDC_NOTE_B2,249,52,15,27
+END
+
+IDD_VISUALPREFSDLG DIALOG DISCARDABLE  0, 0, 268, 170
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Visual Prefs"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,216,118,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,216,154,50,14
+    PUSHBUTTON      "Apply",IDC_APPLY,216,136,50,14
+    LTEXT           "Colours:",IDC_STATIC,2,2,34,14
+    COMBOBOX        IDC_COLCOMBO,36,2,118,166,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Change",IDC_CHANGECOL,159,2,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ADDMACHINE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 224
+    END
+
+    IDD_RENAMEDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 250
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_PARAMDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_KEYBOARDDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 264
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 79
+    END
+
+    IDD_VISUALPREFSDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 266
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 168
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_POPUPS MENU DISCARDABLE 
+BEGIN
+    POPUP "Machine"
+    BEGIN
+        MENUITEM "&Parameters...",              ID_MACHINE_PARAMETERS
+        MENUITEM "&Attributes...",              ID_MACHINE_ATTRIBUTES
+        MENUITEM SEPARATOR
+        MENUITEM "&Rename...",                  ID_MACHINE_RENAME
+        MENUITEM "&Delete",                     ID_MACHINE_DELETE
+        MENUITEM SEPARATOR
+        POPUP "MDK &Work Mode"
+        BEGIN
+            MENUITEM "&Mono",                       ID_MACHINE_MDKWORKMODE_MONO
+
+            MENUITEM "&Stereo",                     ID_MACHINE_MDKWORKMODE_STEREO
+
+        END
+        MENUITEM "(dev) Work mode info",        ID_MACHINE_DEVWORKMODEINFO
+        MENUITEM "(dev) Force exception",       ID_MACHINE_DEVFORCEEXCEPTION
+        MENUITEM SEPARATOR
+        MENUITEM "R&eplace...",                 ID_MACHINE_REPLACE
+        MENUITEM "&Unload",                     ID_MACHINE_UNLOAD
+    END
+    POPUP "Connection"
+    BEGIN
+        MENUITEM "&Disconnect",                 ID_CONNECTION_DISCONNECT
+        MENUITEM "&Center pan",                 ID_CONNECTION_CENTERPAN
+    END
+    POPUP "Param"
+    BEGIN
+        MENUITEM "Reset to &default",           ID_PARAM_RESETTODEFAULT
+        MENUITEM "&Random",                     ID_PARAM_RANDOM
+        MENUITEM SEPARATOR
+        POPUP "&Bind"
+        BEGIN
+            MENUITEM "None",                        ID_PARAM_BIND_NONE
+        END
+    END
+END
+
+IDR_PARAMDLGMENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "Add new track",               ID_ADDNEWTRACK
+    MENUITEM "Delete last track",           ID_DELETELASTTRACK
+    POPUP "Presets"
+    BEGIN
+        MENUITEM "Default",                     ID_PRESETS_DEFAULT
+        MENUITEM SEPARATOR
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEW                  "New\nNew"
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\BTDSys Groupie.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

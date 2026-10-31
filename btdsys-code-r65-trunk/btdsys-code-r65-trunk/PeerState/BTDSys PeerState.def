@@ -1,0 +1,7 @@
+; BTDSys PeerState.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BTDSys PeerState"
+DESCRIPTION  'BTDSys PeerState Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

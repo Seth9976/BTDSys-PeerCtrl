@@ -1,0 +1,23 @@
+# Microsoft Developer Studio Generated Dependency File, included by BTDSys SampleGrid.mak
+
+.\SampleGrid.cpp : \
+	"..\..\..\..\mssdk\include\basetsd.h"\
+	"..\AuxBus\auxbus.h"\
+	"..\dsplib\bw.h"\
+	"..\dsplib\dsplib.h"\
+	"..\dsplib\resample.h"\
+	"..\mdk\MachineInterface.h"\
+	"..\mdk\mdk.h"\
+	".\attrs.h"\
+	".\AuxStuff.h"\
+	".\envelopes.h"\
+	".\envstuff.h"\
+	".\generating.h"\
+	".\midi.h"\
+	".\params.h"\
+	".\sgrid.h"\
+	
+
+.\sgrid.rc : \
+	".\skin_16.bmp"\
+	

@@ -1,0 +1,231 @@
+// LoopDlg.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "btdsys samplegrid 2 core.h"
+#include "LoopDlg.h"
+#include "sgrid.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+// CLoopDlg dialog
+
+
+CLoopDlg::CLoopDlg(CWnd* pParent /*=NULL*/)
+	: CDialog(CLoopDlg::IDD, pParent)
+{
+	nWave = 0;
+	fViewMin = 0.0f;
+	fViewMax = 1.0f;
+	fMMBDragCentre = -1.0f;
+
+	//{{AFX_DATA_INIT(CLoopDlg)
+		// NOTE: the ClassWizard will add member initialization here
+	//}}AFX_DATA_INIT
+}
+
+
+void CLoopDlg::DoDataExchange(CDataExchange* pDX)
+{
+	CDialog::DoDataExchange(pDX);
+	//{{AFX_DATA_MAP(CLoopDlg)
+		// NOTE: the ClassWizard will add DDX and DDV calls here
+	//}}AFX_DATA_MAP
+}
+
+
+BEGIN_MESSAGE_MAP(CLoopDlg, CDialog)
+	//{{AFX_MSG_MAP(CLoopDlg)
+	ON_WM_CLOSE()
+	ON_COMMAND(IDOK, OnOk)
+	ON_WM_PAINT()
+	ON_WM_MOUSEWHEEL()
+	ON_WM_MOUSEMOVE()
+	ON_WM_SIZE()
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CLoopDlg message handlers
+
+void CLoopDlg::OnClose() 
+{
+	pmi->pLoopDlg = NULL;
+
+	CDialog::OnClose();
+
+	DestroyWindow();
+	delete this;
+}
+
+void CLoopDlg::OnOk() 
+{
+	OnClose();
+}
+
+void CLoopDlg::OnCancel() 
+{
+	OnClose();
+}
+
+BOOL CLoopDlg::OnInitDialog() 
+{
+	CDialog::OnInitDialog();
+	
+	CMenu *m = GetMenu()->GetSubMenu(0);
+	if (m)
+	{
+		m->DeleteMenu(0,MF_BYPOSITION);
+	
+
+		for (int i=0; i<200; i++)
+		{
+			if (pmi->pCB->GetWave(i))
+			{
+				char txt[256];
+				sprintf(txt,"%i: %s",i,pmi->pCB->GetWaveName(i));
+				if (!nWave) nWave = i;
+				m->AppendMenu(MF_STRING | MF_ENABLED | ((i == nWave) ? MF_CHECKED : 0),
+					33000+i, txt);
+			}
+		}
+	}
+
+	if (!nWave)
+	{
+		MessageBox("Error: no waves in wavetable");
+	}
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	              // EXCEPTION: OCX Property Pages should return FALSE
+}
+
+void CLoopDlg::OnPaint() 
+{
+	CPaintDC dc(this); // device context for painting
+
+	if (nWave)
+	{
+		const CWaveInfo *pwi = pmi->pCB->GetWave(nWave);
+		const CWaveLevel *pwl = pmi->pCB->GetWaveLevel(nWave,0);
+		if (pwi && pwl)
+		{
+			CRect r; GetClientRect(&r);
+			float step = (fViewMax - fViewMin) / (float)r.right;
+			for (int x=0; x<r.right; x++)
+			{
+				float s1 = fViewMin + step*(float)x;
+				float s2 = s1+step;
+				int is1 = (int)(s1 * (float)pwl->numSamples);
+				int is2 = (int)(s2 * (float)pwl->numSamples);
+				int ymin=0, ymax=0;
+				for (int i=is1; i<=is2; i++)
+				{
+					int z;
+
+					if (pwi->Flags & WF_STEREO) 
+						z = (pwl->pSamples[i*2] + pwl->pSamples[i*2+1]) / 2;
+					else 
+						z = pwl->pSamples[i];
+
+					if (z < ymin) ymin = z;
+					if (z > ymax) ymax = z;
+				}
+
+				ymin = 0x8000 - ymin; ymin = ymin * r.bottom / 0x10000;
+				ymax = 0x8000 - ymax; ymax = ymax * r.bottom / 0x10000;
+
+				dc.MoveTo(x,ymax);
+				dc.LineTo(x,ymin+1);
+			}
+
+
+
+
+		}
+	}
+
+
+	
+	// Do not call CDialog::OnPaint() for painting messages
+}
+
+BOOL CLoopDlg::OnMouseWheel(UINT nFlags, short zDelta, CPoint pt) 
+{
+	CRect r; GetClientRect(r);
+
+	ScreenToClient(&pt);
+
+	float factor = (zDelta > 0) ? 0.75f : 1.33333f;
+	float centre = fViewMin + ((float)pt.x / (float)r.right) * (fViewMax - fViewMin);
+	char txt[256];
+	sprintf(txt,"%f",centre);
+	OutputDebugString(txt);
+
+	float width = (fViewMax - fViewMin) * factor;
+
+	fViewMin = centre - ((float)pt.x / (float)r.right) * width;
+	fViewMax = fViewMin + width;
+
+	if (fViewMin < 0.0f) fViewMin = 0.0f;
+	if (fViewMax > 1.0f) fViewMax = 1.0f;
+
+	{
+		float centre = fViewMin + ((float)pt.x / (float)r.right) * (fViewMax - fViewMin);
+		char txt[256];
+		sprintf(txt,"%f",centre);
+		OutputDebugString(txt);
+	}
+	
+	RedrawWindow();
+	
+	return CDialog::OnMouseWheel(nFlags, zDelta, pt);
+}
+
+void CLoopDlg::OnMouseMove(UINT nFlags, CPoint pt) 
+{
+	CRect r; GetClientRect(r);
+
+	if (fMMBDragCentre > -0.5f)
+	{
+		if (nFlags & MK_MBUTTON)
+		{
+			float width = fViewMax - fViewMin;
+			fViewMin = fMMBDragCentre - ((float)pt.x / (float)r.right) * width;
+			fViewMax = fViewMin + width;
+			if (fViewMin < 0.0f)
+			{
+				fViewMax += -fViewMin;
+				fViewMin = 0.0f;
+			}
+			if (fViewMax > 1.0f)
+			{
+				fViewMin -= (fViewMax - 1.0f);
+				fViewMax = 1.0f;
+			}
+			RedrawWindow();
+		}
+		else
+			fMMBDragCentre = -1.0f;
+	}
+	else if (nFlags & MK_MBUTTON)
+	{
+		fMMBDragCentre = fViewMin + ((float)pt.x / (float)r.right) * (fViewMax - fViewMin);
+	}
+
+
+	
+	CDialog::OnMouseMove(nFlags, pt);
+}
+
+void CLoopDlg::OnSize(UINT nType, int cx, int cy) 
+{
+	CDialog::OnSize(nType, cx, cy);
+	
+	RedrawWindow();
+}

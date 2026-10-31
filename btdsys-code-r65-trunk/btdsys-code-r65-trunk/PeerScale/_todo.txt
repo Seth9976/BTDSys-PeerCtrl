@@ -1,0 +1,13 @@
+Better MIDI:
+	Currently note-offs are ignored
+	Need to track what note was triggered by each MIDI note
+	Should probably make note-off handling optional.
+
+Can we replace scales.txt with tinga's version without breaking existing songs?
+	No, we can't.
+	Because there are new scales inserted into the list rather than just appended, it would change the scale param.
+	Would need a new version
+
+Subtick delay
+	Additional param would require a new version
+	

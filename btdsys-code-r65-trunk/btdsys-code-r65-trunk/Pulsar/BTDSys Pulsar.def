@@ -1,0 +1,7 @@
+; BTDSys Pulsar.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BTDSys Pulsar"
+DESCRIPTION  'BTDSys Pulsar Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

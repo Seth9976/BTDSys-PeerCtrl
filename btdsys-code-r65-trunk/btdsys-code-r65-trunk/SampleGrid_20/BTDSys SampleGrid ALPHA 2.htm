@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Developer Studio">
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE>sgrid alpha 2</TITLE>
+</HEAD>
+<BODY>
+
+<pre>
+--- BTDSYS SAMPLEGRID ALPHA 2 ---
+
+***********************************************************************
+These machines go in your GENERATORS folder. Repeat: GENERATORS.
+OK, now you have no excuses :)
+***********************************************************************
+
+Some basic stuff:
+
+* Now with multiple versions. Versions have different numbers of triggers,
+and/or different types of triggers ("switch"es are on/off, "byte"s are
+numeric).
+
+* Load some samples into consecutive wavetable slots. Set the First Wave
+parameter to the first of these. Now enter triggers into the columns.
+
+* Auxbus works better if you use the Cyanphase return, connect SampleGrid
+to the aux return, and set aux return's in mixing levels (NOT the volume
+of the machine connection!!!) to zero. This should prevent any clicks or
+latency you might otherwise experience.
+
+As for everything else, well just play around with it. You'll figure it out.
+
+If you find any bugs or missing features, or you just want to tell me how
+lame I am, email me at <a href="mailto:e@btd2001.freeserve.co.uk">e@btd2001.freeserve.co.uk</a>.
+
+And don't use it in songs you want to keep or distribute yet.
+
+Thanks for your time
+btd
+
+</pre>
+<hr>
+
+<p>Commands 2 and 7 use the 2 argument digits separately (2 digits ranging 0-F), the rest use both
+together (1 number ranging 01-FF).
+
+<table border="1">
+<tr><td><b>Num</b></td>
+<td><b>Command</b></td>
+<td><b>Arg</b></td></tr>
+
+<tr><td>00</td>
+<td>None</td>
+<td>None</td></tr>
+
+<tr><td>01</td>
+<td>Delay</td>
+<td>No of subticks to delay</td></tr>
+
+<tr><td>02</td>
+<td>Retrigger</td>
+<td>1st digit = interval in subticks<br>
+2nd digit = number of ticks</td></tr>
+
+<tr><td>03</td>
+<td>Offset</td>
+<td>Offset from start of sample</td></tr>
+
+<tr><td>04</td>
+<td>Reverse+offset</td>
+<td>Offset from start of sample</td></tr>
+
+<tr><td>05</td>
+<td>Probability</td>
+<td>Probability of playing sample</td></tr>
+
+<tr><td>06</td>
+<td>Cut</td>
+<td>No of subticks to cut after</td></tr>
+
+<tr><td>07</td>
+<td>Delay+Cut</td>
+<td>1st digit = No of subticks to delay<br>
+2nd digit = No of subticks to cut after (counted from when the sound is triggered)</td></tr>
+
+</table>
+
+</BODY>
+</HTML>

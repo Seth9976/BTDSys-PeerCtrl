@@ -1,0 +1,7 @@
+; BTDSys Groupie.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BTDSys Groupie"
+DESCRIPTION  'BTDSys Groupie Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

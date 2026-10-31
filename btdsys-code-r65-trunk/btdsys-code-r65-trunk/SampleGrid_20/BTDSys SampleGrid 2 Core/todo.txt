@@ -1,0 +1,80 @@
+VERSION TWO POINT ZERO
+@Peer triggers
+@MIDI/qwrtyu keyups
+@improve retrigging
+@end points
+@looping
+@midi recording
+@length units for commands
+@command for setting number of virtual channels per track
+ tune envelope
+ other loop modes
+ typewriter retrigs --- last retrig getting cut off
+ retrig with length in ticks --- sometimes there's an extra retrig at the end
+ retrigger modes vs channels? --- what? Oh --- maybe XOR groups and delays/retrigs?
+ wm errrors after vol envelope release
+ ramping on mute switches & on note cut
+@volume level on the wavetable editor
+ replacing the text on the buttons with Assign or Learn... maybe put a lil clickable [?] box
+@I know you're working on the retrigger params, so can I make a request? Can you think about
+  changing the second part of the parameter so that it lets you specify the number of retriggers 
+  instead of the number of ticks?
+
+* improve disk streaming for battery kits
+* Peer output
+* Offset trigger and 00
+* finish backend for the new dlgs
+* Tune envelope
+* Timestretch loop fit?
+* Reduce param bloat?
+* Export drumkit to wavetable
+* Coexisting wt & kit samples
+* some track commands like log volume slide down (in ms not tick/subtick... so we can still mutilate tpb/bpm and not have to change values to correct it)
+* vol/pan per group
+* nicify retrig shit
+* midi/qweerty keyups
+* midi/querty recording
+* advanced midi
+* per-track trigger modes
+* env-based commands: trigger by legnth / by number
+* thread getting deadlocked instead of dying when loading song (fixed?)
+* Set number of v channels (per track)
+* a tuning by track in cent for micro tuning would be great
+* a scale (user preset) option added to min max when trig a machine on notes
+* tune type switchable (track tune param -> new hits only, most recent hit, all playing)
+
+Peer
+  trigger with velocity
+  other params are envelopes
+  including a couple of aux envs
+
+
+
+
+
+-----------------------------------------------------------
+
+New in this version:
+
+* Added some separators to the parameter layout (OL1.5 required)
+* Dual-mode triggers (these were added before, but I don't think I mentioned them)
+
+
+[quote="z_tetha"]
+1) affect pitch of currently triggered sample only, or:
+2) affect entire channel/tracks pitch (including waves that haven't gone silent yet)
+3) ..whats the 3rd one? 
+[/quote]
+
+1. Only subsequently triggered samples
+2. The most recently triggered sample, and subsequent ones
+3. Everything, like now
+
+[quote="z_tetha"]HA ! what about a filter envelope :)  [/quote]
+
+Nah... not worth the effort IMO. There will be a couple of "peer only" envelopes to assign to filters or what-have-you.
+
+[quote="mute"]* begins to fear the possbility of bloat (or a never ending requests list) *[/quote]
+
+Too late on both counts, I'd say :( There are already plenty of ideas to keep me going for versions 2.0, 2.1, 2.2, ... so that's probably how they'll appear (ie not all at once). So keep suggesting things by all means, just don't be surprised/disappointed/offended if they don't appear straight away.
+

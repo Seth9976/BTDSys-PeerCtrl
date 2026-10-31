@@ -1,0 +1,21 @@
+SHORT TERM
+* check assignments and deleting/renaming machines
+* case sensitivity of list sorting (AddMachineDlg)
+* look into tooltips for toolbar buttons
+* rename on replace
+
+MID TERM
+* make new machine search faster
+* ^^^^^^^^^^^^^^^^^^^^^^^ non-interactive ("Go" btn) for slower systems
+* add/delete tracks
+* it would be nice if the groupie pattern could bring through what each param was bind to instead of just showing Word, Switch etc..
+* index.txt: spearators, renamed machines, missing machines, index.plur?
+* don't use cheapo amp for input placeholders etc --- use a builtin Jeskola machine instead?
+
+LONG TERM
+* feedback loops
+  - IDEA:
+    collapse cycles down to single nodes, process them separately
+* presets
+* multi ins/outs
+* miex::AddInput() etc

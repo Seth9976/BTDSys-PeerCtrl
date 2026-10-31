@@ -1,0 +1,457 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BTDSys SampleGrid 2 Core.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_KITINFODLG DIALOG DISCARDABLE  0, 0, 383, 263
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BTDSys SampleGrid - Kit Info"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,331,247,50,14
+    CONTROL         "Tree1",IDC_KITTREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,2,92,327,169
+    EDITTEXT        IDC_KITINFO,2,2,379,42,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "Pr&eview play",IDC_PREVIEW,331,47,50,14
+    CTEXT           "through track",IDC_STATIC,331,64,50,10
+    COMBOBOX        IDC_PRETRACKCOMBO,331,75,50,186,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_SAMPLEINFO,2,47,327,42,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+END
+
+IDD_KITSAVEDLG DIALOG DISCARDABLE  0, 0, 198, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Kit Saving Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Save kit path only",IDC_NOSAVE,"Button",
+                    BS_AUTORADIOBUTTON,2,2,194,10
+    CONTROL         "Save any wave data in memory",IDC_SMALLSAVE,"Button",
+                    BS_AUTORADIOBUTTON,2,13,194,10
+    CONTROL         "Pull wave data from disk and save everything",
+                    IDC_BIGSAVE,"Button",BS_AUTORADIOBUTTON,2,24,194,10
+    LTEXT           "Estimated disk usage for selected option: 12345MB",
+                    IDC_SIZEESTIMATE,2,36,194,11
+    DEFPUSHBUTTON   "OK",IDOK,2,50,194,14
+END
+
+IDD_LOADSTATUS DIALOGEX 0, 0, 193, 20
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "BTDSys SampleGrid"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CTEXT           "Bla bla bla\nasdfghjk",IDC_STATUS,0,0,193,20,SS_SUNKEN
+END
+
+IDD_GROUPDLG DIALOG DISCARDABLE  0, 0, 410, 306
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,353,285,50,14
+    EDITTEXT        IDC_GROUPNAMEEDIT,63,206,141,14,ES_AUTOHSCROLL
+    GROUPBOX        "Group",IDC_STATIC,7,191,208,108
+    COMBOBOX        IDC_GROUPCOMBO,39,188,142,222,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_XORCHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,64,
+                    226,16,8
+    COMBOBOX        IDC_OUTCOMBO,63,239,142,222,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Button1",IDC_GROUPMUTEBTN,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,63,255,142,20
+    GROUPBOX        "Track",IDC_STATIC,7,7,396,174
+    COMBOBOX        IDC_TRACKCOMBO,39,7,142,222,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_TRACKGROUPCOMBO,49,44,142,222,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Name",IDC_STATIC,39,209,20,8
+    LTEXT           "XOR",IDC_STATIC,43,227,16,8
+    LTEXT           "Output",IDC_STATIC,37,242,22,8
+    LTEXT           "Group",IDC_STATIC,24,49,20,8
+    CONTROL         "Button1",IDC_TRACKKEYBTN,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,48,63,142,20
+    COMBOBOX        IDC_TRACKSAMPLECOMBO,49,25,142,268,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Sample",IDC_STATIC,21,28,24,8
+    LTEXT           "Advanced MIDI",IDC_STATIC,17,93,51,8,NOT WS_VISIBLE
+    CONTROL         "Button1",IDC_MIDILOWNOTE,"Button",BS_OWNERDRAW | NOT 
+                    WS_VISIBLE | WS_TABSTOP,61,109,55,12
+    CONTROL         "Button1",IDC_MIDIHIGHNOTE,"Button",BS_OWNERDRAW | NOT 
+                    WS_VISIBLE | WS_TABSTOP,138,109,51,12
+    LTEXT           "to",IDC_STATIC,123,110,8,10,NOT WS_VISIBLE
+    LTEXT           "Range",IDC_STATIC,35,110,22,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_MIDIRANGECOMBO,61,125,129,222,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_MIDIMODECOMBO,61,141,129,222,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Mode",IDC_STATIC,35,142,19,8,NOT WS_VISIBLE
+    LTEXT           "Offset range",IDC_STATIC,211,110,40,8
+    CONTROL         "Button1",IDC_WAVEOFFSET,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,211,121,182,50
+    GROUPBOX        "Peer",IDC_STATIC,211,17,181,86
+    COMBOBOX        IDC_PEERCOMBO,238,15,113,200,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PEERMACCOMBO,219,34,78,259,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PEERPARAMCOMBO,307,34,78,259,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "->",IDC_STATIC,299,36,8,8
+    CONTROL         "Slider1",IDC_PEERMAXSLIDER,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,
+                    237,53,99,10
+    LTEXT           "Max",IDC_STATIC,220,53,18,11,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    EDITTEXT        IDC_PEERMAXEDIT,338,51,49,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_VISIBLE | WS_DISABLED
+    LTEXT           "Mute key",IDC_STATIC,29,260,30,8
+    LTEXT           "Mute key mode",IDC_STATIC,9,281,50,8
+    COMBOBOX        IDC_GROUPMUTECOMBO,63,279,142,222,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider1",IDC_PEERMINSLIDER,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,
+                    237,69,99,10
+    LTEXT           "Min",IDC_STATIC,220,69,18,11,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    EDITTEXT        IDC_PEERMINEDIT,338,67,49,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_VISIBLE | WS_DISABLED
+END
+
+IDD_GROUPPERFDLG DIALOG DISCARDABLE  0, 0, 270, 257
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+IDD_LOOPDLG DIALOG DISCARDABLE  0, 0, 414, 180
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "Dialog"
+MENU IDR_LOOPDLGMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Button1",IDC_DISPLAY,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    27,13,368,153
+END
+
+IDD_CUSTOMENVDIALOG DIALOGEX 0, 0, 404, 210
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Envelope Editor"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Close",1,347,189,50,14
+    CONTROL         "",IDC_ENVDISPLAY,"Static",SS_BLACKRECT | SS_NOTIFY,7,7,
+                    338,196,WS_EX_CLIENTEDGE
+    CTEXT           "16",IDC_ENVNUM,367,7,20,10
+    PUSHBUTTON      ">",IDC_NEXTENV,387,7,10,10
+    PUSHBUTTON      "<",IDC_PREVENV,357,7,10,10
+    PUSHBUTTON      "Reset",IDC_ENVERESET,347,174,50,14
+    PUSHBUTTON      "Copy",IDC_ENVECOPY,347,22,50,14
+    PUSHBUTTON      "Paste",IDC_ENVEPASTE,347,37,50,14
+    CONTROL         "Snap",IDC_ENVESNAP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,347,57,50,10
+    PUSHBUTTON      "Test",IDC_TEST,347,159,50,14
+    CONTROL         "Move Rest",IDC_MOVEREST,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,347,72,50,10
+    PUSHBUTTON      "Export",IDC_EXPORT,347,144,50,14
+    PUSHBUTTON      "Import",IDC_IMPORT,347,129,50,14
+END
+
+IDD_ABOUTDLG DIALOG DISCARDABLE  0, 0, 388, 269
+STYLE WS_POPUP
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+IDD_CMDLISTDLG DIALOGEX 0, 0, 280, 211
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "SampleGrid command list"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_RICHEDIT1,"RICHEDIT",ES_MULTILINE | ES_READONLY | 
+                    WS_BORDER | WS_VSCROLL | WS_TABSTOP,7,27,120,69
+    COMBOBOX        IDC_SHOWCOMBO,7,7,266,197,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_SHUFFLEDLG DIALOG DISCARDABLE  0, 0, 240, 202
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BTDSys SampleGrid - Shuffle Editor"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,82,185,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,142,185,50,14
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,3,71,57,12
+    LTEXT           "0",IDC_STATIC,7,60,20,8
+    CONTROL         "Slider1",IDC_SLIDER2,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,62,71,57,12
+    LTEXT           "1",IDC_STATIC,66,60,20,8
+    CONTROL         "Slider1",IDC_SLIDER3,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,121,71,57,12
+    LTEXT           "2",IDC_STATIC,125,60,20,8
+    CONTROL         "Slider1",IDC_SLIDER4,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,180,71,57,12
+    LTEXT           "3",IDC_STATIC,184,60,20,8
+    RTEXT           "Profile",IDC_STATIC,3,3,25,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_COMBO1,31,3,206,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Name",IDC_STATIC,3,21,25,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT1,31,21,206,12,ES_AUTOHSCROLL
+    SCROLLBAR       IDC_SCROLLBAR1,3,89,234,11
+    RTEXT           "Steps",IDC_STATIC,3,38,25,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT2,31,38,40,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,71,38,11,12
+    LTEXT           "NOTE: This dialog doesn't work yet :(",IDC_STATIC,58,
+                    140,121,25
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_KITINFODLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 381
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 261
+    END
+
+    IDD_KITSAVEDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 196
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_GROUPDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 403
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 299
+    END
+
+    IDD_GROUPPERFDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 267
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 254
+    END
+
+    IDD_LOOPDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 407
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+
+    IDD_ABOUTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 381
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 262
+    END
+
+    IDD_CMDLISTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 273
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 204
+    END
+
+    IDD_SHUFFLEDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 237
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 199
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_KITINFOIMGS         BITMAP  DISCARDABLE     "kitinfoi.bmp"
+SEPARATOR               BITMAP  DISCARDABLE     "separator.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_GROUPDLG DLGINIT
+BEGIN
+    IDC_MIDIRANGECOMBO, 0x403, 11, 0
+0x6857, 0x7469, 0x2065, 0x656b, 0x7379, "\000" 
+    IDC_MIDIRANGECOMBO, 0x403, 11, 0
+0x6c42, 0x6361, 0x206b, 0x656b, 0x7379, "\000" 
+    IDC_MIDIRANGECOMBO, 0x403, 9, 0
+0x6c41, 0x206c, 0x656b, 0x7379, "\000" 
+    IDC_MIDIMODECOMBO, 0x403, 8, 0
+0x6e55, 0x6669, 0x726f, 0x006d, 
+    IDC_MIDIMODECOMBO, 0x403, 5, 0
+0x7554, 0x656e, "\000" 
+    IDC_MIDIMODECOMBO, 0x403, 9, 0
+0x6556, 0x6f6c, 0x6963, 0x7974, "\000" 
+    IDC_MIDIMODECOMBO, 0x403, 4, 0
+0x6150, 0x006e, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_LOOPDLGMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&Wave"
+    BEGIN
+        MENUITEM "Dummy",                       ID_WAVE_DUMMY
+    END
+    MENUITEM "&OK",                         IDOK
+    MENUITEM "&Cancel",                     IDCANCEL
+END
+
+IDR_FUZZPILZENVMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "bgpopup"
+    BEGIN
+        MENUITEM "Add Point",                   ID_BGPOPUP_ADDPOINT
+        POPUP "Loop mode"
+        BEGIN
+            MENUITEM "dummy",                       40007
+        END
+        POPUP "Release mode"
+        BEGIN
+            MENUITEM "dummy",                       40008
+        END
+    END
+    POPUP "pointpopup"
+    BEGIN
+        MENUITEM "Delete point",                ID_POINTPOPUP_DELETEPOINT
+        MENUITEM "Loop start",                  ID_POINTPOPUP_LOOPSTART
+        MENUITEM "Loop end",                    ID_POINTPOPUP_LOOPEND
+        MENUITEM "Sustain level",               ID_POINTPOPUP_SUSTAINLEVEL
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RTF
+//
+
+IDR_COMMANDS            RTF     DISCARDABLE     "commands.rtf"
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\BTDSys SampleGrid 2 Core.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

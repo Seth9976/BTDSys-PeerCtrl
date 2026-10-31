@@ -1,0 +1,7 @@
+; BTDSys MidiJumpHACK.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BTDSys LiveJumpHACK"
+DESCRIPTION  'BTDSys LiveJumpHACK Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

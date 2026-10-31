@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>BTDSys PeerCtrl</title>
+	<style type="text/css"><!--
+		body {
+			font-family: arial,helvetica,sans-serif;
+			color: #000000;
+			background: #FFFFFF;
+		}
+		
+		a:link, a:visited, a:active {
+			color: #0000FF;
+			text-decoration: underline;
+		}
+		
+		a:hover {
+			color: #FF0000;
+			text-decoration: none;
+		}
+	--></style>
+</head>
+
+<body>
+
+<h1>BTDSys SampleGrid</h1>
+
+<h2>Installation</h2>
+<p>Unzip all files apart from <i>BTDSys SampleGrid Out.dll</i> to your <b>Gear\Generators</b>
+folder. <i>BTDSys SampleGrid Out.dll</i> goes in <b>Gear\Effects</b>.</p>
+<p>You might also want to copy & paste the following into an appropriate place in your index.txt file:<br>
+<pre>  /BTDSys SampleGrid
+   BTDSys SampleGrid - Byte x 4, Byte x 4
+   BTDSys SampleGrid - Byte x 8, Byte x 8
+   BTDSys SampleGrid - Byte x 16, Byte x 16
+   BTDSys SampleGrid - Switch x 8, Switch x 8
+   BTDSys SampleGrid - Switch x 16, Switch x 16
+   BTDSys SampleGrid - Switch x 32, Switch x 32
+   1,-----
+   BTDSys SampleGrid Out, Out
+   /.. </pre>
+
+<h2>Overview</h2>
+<p>SampleGrid is a sample player designed especially for rhythm programming. Its main
+feature is a "grid" of triggers kept together in the pattern view. It also features
+support for multiple outputs, and MIDI functionality.</p>
+
+<h2>Multiple Versions</h2>
+<p>SampleGrid comes in several "sizes", with different numbers and types of triggers. The
+versions are functionally identical, apart from the number of triggers available and whether
+those triggers allow only 1/0 (switch) or numeric (volume/pan/etc) values (byte). This
+document covers all versions (cos I'm too lazy to write 6 different files).<br>
+If you really really desperately need a grid with 23 bytes or 47 switches or something, email
+me and I'll sort you out with it.</p>
+
+<h2>Parameters</h2>
+<h3>Global parameters</h3>
+<ul>
+<li><b>First Wave</b> - sets the first wave from the Buzz wavetable to be used. By default,
+SampleGrid uses a number of consecutive waves, so if the first wave is 1, the first trigger
+uses sample 1, the second 2, third 3, etc.</li>
+
+<li><b>Dividers</b> <i>Only in Byte versions</i> - Just a visual device to help you distinguish
+the triggers from the rest of the parameters.</li>
+
+<li><b>Triggers</b> - Actually trigger the drum sounds.
+<ul><li><i>In Switch versions</i> - a value of 1 triggers the sample on, and 0 off.</li>
+<li><i>In Byte versions</i> - the sound is triggered, with some characteristic set by the
+entered value. What this value sets is determined by the Trigger Type parameter. The exception
+is a value 00, which always offs the current sample.</li></ul>
+Note that the number and type of triggers depends on the version being used. Choose an appropriate
+version for your needs in each case.</li>
+
+<li><b>Trigger Type</b> <i>Only in Byte versions</i> - Determines what the numeric trigger values
+will set.
+<ul><li><i>Velocity</i> - the volume of the sound</li>
+<li><i>Pan</i> - position in the stereo field</li>
+<li><i>Tune</i> - pitch of the sound</li>
+<li><i>Probability</i> - likelihood of the sound being triggered, where FE is certain and 01 is almost
+certainly not</li>
+<li><i>Command argument</i> - value is used as argument for the command on this line (if any)</li></ul>
+Note that any values here are unaffected by inertia.
+</li>
+
+<li><b>Solo Track</b> - for editing purposes, allows you to solo one track (ie mute the rest). If set to
+"off" then no tracks are muted.</li>
+
+<li><b>Global Volume/Pan/Tune</b> - set the overall volume, stereo pan and pitch of all sounds.</li>
+
+<li><b>Shuffle Size</b> - controls by how much shuffle mode delays beats</li>
+
+<li><b>Shuffle Step</b> - shuffle mode will delay every nth tick, where n is the value set here.</li>
+
+<li><b>Shuffle Randomness</b> - how much the delay time for shuffled beats deviates from the specified
+size.</li>
+
+<li><b>Shuffle Reset</b> - a 1 in this column will reset the shuffle counter.</li>
+
+<li><b>Inertia</b> - controls glide time for certain parameters</li>
+</ul>
+
+<h3>Track parameters</h3>
+<ul>
+<li><b>Wave Number</b> - Allows you to specify the wave number to use. Or if it is set to Auto,
+the wave will be chosen according to the track number and the First Wave specified for the machine.</li>
+
+<li><b>Command/Argument</b> - Provide a number of "special effects" for triggering.
+
+<table border="1">
+<tr><td><b>Number</b></td>
+<td><b>Command name</b></td>
+<td><b>What it does</b></td>
+<td><b>Argument meaning</b></td></tr>
+
+<tr><td>00</td>
+<td>None</td>
+<td>Nothing</td>
+<td>None</td></tr>
+
+<tr><td>01</td>
+<td>Delay</td>
+<td>Delay this hit by some amount</td>
+<td>Number of subticks to delay</td></tr>
+
+<tr><td>02</td>
+<td>Retrigger</td>
+<td>Keep triggering every so often for some length of time</td>
+<td>1st digit = interval in subticks<br>
+2nd digit = number of ticks to keep retriggering</td></tr>
+
+<tr><td>03</td>
+<td>Offset</td>
+<td>Play the sample forwards from some point other than the start</td>
+<td>Offset from start of sample, where 00=start and FF=end</td></tr>
+
+<tr><td>04</td>
+<td>Reverse+offset</td>
+<td>Play the sample backwards from some point other than the start</td>
+<td>Offset from start of sample, where 00=start and FF=end</td></tr>
+
+<tr><td>05</td>
+<td>Probability</td>
+<td>Alter the likelihood of playing a hit</td>
+<td>Probability of playing sample (where 00="definitely not", 80="50/50 chance",
+FF="Definitely")</td></tr>
+
+<tr><td>06</td>
+<td>Cut</td>
+<td>Cut the sample off after some length of time</td>
+<td>Number of subticks to cut after</td></tr>
+
+<tr><td>07</td>
+<td>Delay+Cut</td>
+<td>Like a combination of commands 1 and 6</td>
+<td>1st digit = No of subticks to delay<br>
+2nd digit = No of subticks to cut after (counted from when the sound is triggered)</td></tr>
+
+</table>
+</li>
+
+<li><b>Tick Subdivide</b> - how many evenly sized slices to divide each tick into. These slices
+are used by some commands to specify times.</li>
+
+<li><b>Mute</b> - allows you to turn the sound of this track on or off.</li>
+
+<li><b>Volume/Pan/Tune</b> - set the volume, stereo pan and pitch of this sound.</li>
+
+<li><b>Auxbus Group</b> - which auxbus channels to send this sound over, or use "none" to send
+through the machine's output.</li>
+</ul>
+
+<h3>Attributes</h3>
+<ul>
+<li><b>Ramp Length</b> - sets the ramping (anticlick) time in samples. Ramping takes effect when
+samples are triggered or stopped, and can also affect mute/solo and volume.</li>
+<li><b>Ramp Mute/Solo</b> - sets whether ramping affects muting and soloing of tracks.</li>
+<li><b>Ramp Volume</b> - sets whether ramping affects volume slider changes.</li>
+<li><b>Inertia Volume/Pan/Tune</b> - sets whether the corresponding parameters will be affected
+by inertia.</li>
+</ul>
+
+<h2>AuxBus</h2>
+<p>This feaure is deprecated by the multiple out functions (see below). It is included for backwards
+compatibility only.</p>
+
+<h2><a name="out">Multiple Outs</a></h2>
+<p>SampleGrid allows use of separate "output" machines to give up to 9 stereo outputs. This is
+somewhat neater than the auxbus solution above:
+<ul>
+<li>Add a "BTDSys SampleGrid Out" machine (effect) to your song.</li>
+<li>Connect a SampleGrid to the out machine.</li>
+<li>Set the group number on one of SGrid's tracks, and the group parameter of the Out machine,
+to the same value.</li>
+<li>The volume on the connection between SGrid and the Out machine is unimportant, but it should
+not be zero.</li>
+</ul>
+Now you can add different processing to different sounds from the same machine.</p>
+
+<h2>MIDI</h2>
+<p>SampleGrid supports triggering of samples via a MIDI keyboard. To set this up, right click the
+machine and choose "MIDI Setup".</p>
+<p>Now press a note on your keyboard, and you may use the button to assign that note to a sample.
+You should also choose the MIDI channel you wish to use (the same channel is used for each sample).
+You can also specify whether to use the velocity from the keyboard, and whether note offs are used
+(ie the sample stops when you lift your finger from the key)</p>
+<p>Also you can record using MIDI, by checking the appropriate boxes in the MIDI settings dialog.
+Normal rules apply for MIDI recording in Buzz machines (click Record in Buzz's toolbar, make sure
+you lay down blank patterns over the part you want to record).</p>
+
+<h2>History</h2>
+<p><b>v1.0</b> - initial release</p>
+<p><b>v1.1 (not released)</b> - increased auxbus groups from 4 to 8, fixed a bug with ramping (thanks oomek)</p>
+<p><b>v1.2</b> - second release - new non-auxbus multiple out system (thanks polac), fixed some clicking problems (thanks ronny pries)</p>
+<p><b>v1.21</b> - fixed a bug with the delay and shuffle functions (thanks moon.god and thOke)</p>
+
+<h2>Thanks</h2>
+<p>Oskari, Cyanphase, Jeph Wacheski, Ronny Pries, Frank Potulski, mva, oomek, thOke, moon.god, mute,
+anyone else I should have thanked.</p>
+
+<h2>EOF/legal</h2>
+<p>Docs and code &copy;2002-2003 Ed Powley<br />
+<a href="mailto:zen30378@zen.co.uk">email</a> | <a href="http://btdsys.cjb.net">website</a><br />
+This machine is freeware and freely distributable.</p>
+
+</body>
+</html>

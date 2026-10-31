@@ -1,0 +1,7 @@
+; Mooter.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Mooter"
+DESCRIPTION  'Mooter Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

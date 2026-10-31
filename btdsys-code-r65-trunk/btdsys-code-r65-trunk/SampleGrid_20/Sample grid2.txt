@@ -1,0 +1,48 @@
+Sample Grid
+Idea 0.2
+
+
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .
+........ .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .
+
+triggers sf sf v1 p1 t1 v2 p2 t2 v3 p3 t3 v4 p4 t4 ...
+
+number of triggers and their range in the sample bank are set as attributes,
+defulting to; no. of triggers=8  min=1  max=32  ???
+              range start= 00    min=00  max=C8   [ so the range here is 
+00-08 ]
+
+this will allow for the use of several separate Sample Grid machines, each 
+using different
+ranges of the sample bank, for separate processing etc. with this setup the 
+user need not
+assign individual samples, simply choose a start point and the number of 
+triggers, easy!!
+
+sf sf rows are the globle shuffle parameters,.. could try for an original 
+algo.
+
+and the rest of the parameters are Volume, Pan, and Tune, for each of the 
+trigger tracks.
+
+hopefully it can use stereo samples,.. and perhaps the buzz envelops.,?
+
+this will be a very cool machine for peer LFO to play with!
+
+jph2k2
+
+

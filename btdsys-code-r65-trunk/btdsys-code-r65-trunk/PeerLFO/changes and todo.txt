@@ -1,0 +1,36 @@
+Todo:
+
+Merge chahur's new parameters
+	Be careful to maintain compatibility.
+	I *think* that buzz can handle param shuffling but not 100% certain
+
+See if it's possible to record LFO output in target machine patterns
+
+Change Update Freq to be either a fraction of rate or 1/16 ticks
+	This will break compatibility so save for v2
+
+Random seed attribute
+	No way to implement without breaking compatibility. Save for v2.
+	Values come from global frand()
+		Need to replace this with something that can maintain separate settings per instance
+	Values need to be timeline synced
+
+Changes ==========================================================================================
+
+2015.02.18
+	Version 1.3b
+	Changed mi::GetWaveValue() random to return RandomNext instead of RandomLast
+		Seems to work better that way.
+
+2015.02.11
+	Added button to clear assignment
+	Added code to prevent machine gun retrigger in subtick mode
+
+2015.02.09
+	Version 1.3a
+	Fixed broken random wave shape in non-subtick mode (I think!) 
+
+2015.02.08
+	Version 1.3
+	Implemented subtick timing
+		low range of "Update Freq" track param now extends to zero which enables subtick updates (if enabled in Buzz)

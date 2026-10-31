@@ -1,0 +1,1 @@
+Before compiling Pulsar, you must compile and run this "waves" program. This converts the PCM format waves into header files suitable for inclusion into the machine. (Yeah, it would have been better to include them as resources, but whatever.)

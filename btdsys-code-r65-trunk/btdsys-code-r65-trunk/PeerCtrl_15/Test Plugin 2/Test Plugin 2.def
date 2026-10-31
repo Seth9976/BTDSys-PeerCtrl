@@ -1,0 +1,7 @@
+; Test Plugin 2.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Test Plugin 2"
+DESCRIPTION  'Test Plugin 2 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

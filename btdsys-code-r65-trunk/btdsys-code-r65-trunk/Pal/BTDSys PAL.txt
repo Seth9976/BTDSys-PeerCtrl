@@ -1,0 +1,14 @@
+So I had this idea when I was trying to decipher one of tinga's bmxs. Basically it provides a way of visualising the network of peer "connections" in a song.
+
+Unzip it to your buzz\gear\ folder and start Buzz. Load a song or add some machines, then go to machine view and find the "Peer Assignments" item in the View menu. Click it and a window should open up.
+
+The display is pretty self-explanatory. As you move the mouse around the window, various things will be highlighted and informative text boxes will pop up. To suppress the info boxes, hold a Shift key.
+
+Only a few machines are currently supported: LFO, Chord, State, Ctrl, LnB PeerTrigger, jmmcd Peer Note-Pool. Support for each machine has to be coded manually, so for now I've stuck to machines which were present in my test bmxs and where I have access to source. It's fairly easy to add support for other machines, either within the machine itself or in a separate dll. That's something I'll need to talk to devs about later on.
+
+Updating (probing machines for assignments etc) is an expensive process, so it is not done automatically by default. Press the space bar to update manually, or use the Preferences dialog to enable automatic updates.
+
+
+
+Ed Powley 2005-03-19
+http://btdsys.cjb.net

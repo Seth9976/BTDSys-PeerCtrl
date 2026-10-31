@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4394c1a6-20a7-4095-9361-5e0f22ced867}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{f3089828-6f7e-4040-abc1-5e199445fbc2}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{6a5f73b5-39d1-4f93-9633-26e8adabcac2}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Peer LFO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\peerlib2\peerctrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="color1.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="led (0,0).bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="position.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="skin.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="BTDSys Peer LFO.htm" />
+    <None Include="params.txt" />
+    <None Include="readme.txt" />
+    <None Include="changes and todo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\peerlib2\peerctrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

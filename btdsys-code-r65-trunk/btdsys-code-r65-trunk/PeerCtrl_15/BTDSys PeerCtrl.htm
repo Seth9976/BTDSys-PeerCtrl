@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>BTDSys PeerCtrl</title>
+	<style type="text/css"><!--
+		body {
+			font-family: arial,helvetica,sans-serif;
+			color: #000000;
+			background: #FFFFFF;
+		}
+		
+		a:link, a:visited, a:active {
+			color: #0000FF;
+			text-decoration: underline;
+		}
+		
+		a:hover {
+			color: #FF0000;
+			text-decoration: none;
+		}
+	--></style>
+</head>
+
+<body>
+<h1>BTDSys PeerCtrl v1.5</h1>
+
+<h2>What is it?</h2>
+<p><b>PeerCtrl</b> is a general-purpose control machine - that is, it controls the parameters of other Buzz machines.
+The following are just some of its potential uses:
+<ul><li>Control several machines from one machine</li>
+<li>Access parameters which would not normally fit onto the pattern editor screen</li>
+<li>Add inertia to any parameter on any machine</li>
+<li>Tie several parameters to one slider</li>
+<li>Assign non-linear mappings to parameters</li>
+<li>Use endless rotary encoders, such as those on <a href="http://www.doepfer.de">Doepfer</a>'s Pocket Dial, to
+control Buzz</li>
+<li>Control other machines' attributes from patterns</li>
+<li>Use the plugin interface to add new ways of controlling parameters, such as X-Y pads or mixer-style GUIs</li></ul>
+
+<h2>Installation</h2>
+<p>Unzip into your Buzz\Gear\Generators\ folder. Ensure everything in the PeerCtrl directory within the zip file, ends up
+in Buzz\Gear\Generators\PeerCtrl\ . Add to index.txt if you want, or download an up-to-date index.txt if you're lazy.</p>
+
+<h2>Quick-start guide</h2>
+<ul><li>Add PeerCtrl to your song, along with some other machine</li>
+<li>You don't need to connect anything to PeerCtrl in the machine view</li>
+<li>Right click PeerCtrl and select Assignment Settings</li>
+<li>In this dialog, choose the machine and parameter you want to control</li>
+<li>Click Update, then OK</li>
+<li>Use PeerCtrl's parameters to control the other machine</li></ul>
+
+<h2>Version history</h2>
+<ul><li><b>v1.0:</b> First public release.</li>
+<li><b>v1.1:</b> Fixed crashing on song load bug, added control rate attribute.</li>
+<li><b>v1.5:</b> A <i>lot</i> of new stuff.</li>
+</ul>
+
+<h2>Parameters</h2>
+<h3>Global parameters</h3>
+<ul><li><b>Inertia</b> - Sets glide time on the parameters.</li></ul>
+
+<h3>Track parameters</h3>
+<ul>
+<li><b>Slaved</b> (not in the <a href="BTDSys PeerCtrl 'Basic'.htm">'Basic' version</a>) - 
+If this is switched on, this track is controlled by the slider of the previous track, rather than by its own.</li>
+
+<li><b>Value</b> - The value to use for the controlled parameter. This is affected
+by the defined mapping.</li>
+</ul>
+
+<h2>Attributes</h2>
+<ul>
+<li><b>MIDI Inc/Dec Amount</b> - this sets the sensitivity, when <a href="#midi9697">MIDI increment/decrement messages</a>
+are used.</li>
+<li><b>Ctrl Rate</b> - sets how frequently PeerCtrl performs control changes between ticks. When this
+attribute has a value <i>n</i>, control changes will occur every 256&times;<i>n</i> samples (as well
+as on every tick). The exception is a value of zero, which causes control changes to occur only on the
+tick.<br>
+
+In general, smaller values result in smoother inertia & MIDI control, but place a heavier load on the CPU.</li></ul>
+
+<h2>Dialogs</h2>
+<h3><a name="assign">Assignment Settings</a></h3>
+<p><img src="PeerCtrl/Docs/AssignmentSettings.png" />
+<ol><li><b>Assignments list</b> - Lists all currently assigned parameters on all tracks.</li>
+<li><b>Update</b> - Save settings by replacing whatever is currently selected in the assignments list.
+<li><b>Add</b> - Save settings by adding a new assignment entry for the current track.
+<li><b>Clear</b> - Drop the currently selected assignment, leaving an empty slot.
+<li><b>Delete</b> - Drop the currently selected assignment, and remove it from the list for the selected track.
+<li><b>Machine info</b> - Display some very interesting stats on the selected machine.
+<li><b>Param info</b> - Display equally interesting stats on the selected parameter.
+<li><b>Machine dropdown</b> - Use this to select the machine you want to control.
+<li><b>Parameter list</b> - Use this to select the parameter you want to control.
+<li><b>Track dropdown</b> - Use this to select the track you want to control on the selected machine.
+<li><b>Mapping</b> - Use this to create a non-linear relationship between the parameter value chosen in PeerCtrl, and
+the resultant value on the target machine. This works in exactly the same way as the envelope editor in Buzz's wavetable
+view.</li>
+<li><b>Default mapping</b> - Restore the default mapping (like that shown in the screenshot).</li>
+<li><b>MIDI CC Settings</b> - Bring up the <a href="#midi">MIDI settings</a> dialog for the current track.</li>
+<li><b>Control Plugin Settings</b> - Bring up the <a href="#plugin">plugin axis settings</a> dialog.</li>
+<li><b>Help</b> - Bring up this fine document.</li>
+<li><b>OK</b> - Give it a click once you're done.</li></ol>
+</p>
+
+<h3><a name="midi">MIDI CC Settings</a></h3>
+<p><img src="PeerCtrl/Docs/MidiSettings.png" />
+<ol><li><b>Controller</b> - Select the MIDI CC number to use. Note that the number of the last moved controller is
+displayed to the right of this box.</li>
+<li><b>Channel</b> - The MIDI channel on which PeerCtrl should listen.
+<li><b>Feedback</b> - Some MIDI controllers require parameter changes are fed back through the MIDI output. Use this
+option if that is required.</li>
+<li><b>Feedback device</b> - The device through which to feed back parameter changes. Be sure to configure it in Buzz's
+options too!</li>
+<li><b><a name="midi9697">Allow inc/dec</a></b> - Some MIDI controllers with endless rotary encoders send CCs 96 and 97
+as increment and decrement messages respectively. Use this option to enable this.</li>
+<li><b>Wrap values</b> - If enabled, an increment message when the parameter is already at its maximum will cause the
+value to wrap around to the minimum, and similarly at the other end of the scale. If disabled, the parameter will stop
+at each end of the range.</li></ol>
+</p>
+
+<h3><a name="plugin">Plugin Axis Settings</a></h3>
+<p><img src="PeerCtrl/Docs/PluginSettings.png" />
+<ol><li><b>Bound Axes</b> - Lists the plugin axes already bound to the current track.</li>
+<li><b>Add</b> - Bind the axis selected in the Available Axes list to the current track.
+<li><b>Del</b> - Un-bind the axis selected in the Bound Axes list.</li>
+<li><b>Available Axes</b> - Lists all availalbe axes on all active plugins.</li></ol>
+</p>
+
+<h3>Plugins</h3>
+<p>PeerCtrl plugins implement features such as new graphical interfaces, or hardware/software interfaces. Plugins take
+the form of .dll files in your Buzz\Gear\Generators\PeerCtrl\ folder. Programmers can create their own plugins (using
+Visual C++) -- for more info on that, click <a href="http://btdsys.cjb.net/peerctrl_sdk/">here</a>.</p>
+
+
+<h2>Thanks</h2>
+<p>Thanks to:
+adrian jonsson, andreas tilliander, cameron bonde, cyanphase, elektrojaenis, erthad, frank potulski, jeph wacheski,
+juri puumala, km krebs, lee du-caine, magmavander, matt jackson, midi nerd, moon.god, mute, mva, omnihil, oskari, ps,
+raul reales, ronny pries, thorsten keller, tic-tac shut up, wizenwet, everyone else who gave feedback or encouragement.
+And thanks to you for actually reading the docs for once. Nice one.</p>
+
+<h2>EOF/legal</h2>
+<p>Docs and code &copy;2002-2003 Ed Powley<br />
+<a href="mailto:zen30378@zen.co.uk">email</a> | <a href="http://btdsys.cjb.net">website</a><br />
+This machine is freeware and freely distributable, provided no money is charged and all files are present and
+unchanged.</p>
+
+</body>
+</html>

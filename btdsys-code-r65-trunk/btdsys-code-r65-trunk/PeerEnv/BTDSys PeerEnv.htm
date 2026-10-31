@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<TITLE>BTDSys PeerEnv</TITLE>
+</HEAD>
+<BODY>
+
+<h1>BTDSys PeerEnv</h1>
+
+<h2>Installation</h2>
+<p>Put <i>BTDSys PeerEnv.dll</i> in your <b>Gear\Effects</b> folder.</p>
+
+<h2>Overview</h2>
+<p>PeerEnv is an envelope follower, which may control any other machine in Buzz.</p>
+
+<ul>
+<li>Add PeerEnv to your song.</li>
+<li>Connect at least one other machine into PeerEnv's input.</li>
+<li>Right click PeerEnv and select Assign Parameter, then click an unassigned
+track.</li>
+<li>In this dialog, choose the machine and parameter you want to control.</li>
+<li>Click OK. When PeerEnv receives audio input, it will start to control the
+other machine.</li>
+<li>If you want to control more than one parameter from the same PeerEnv, add more
+tracks to the machine (Pattern view, Ctrl +). Then assign them as above.</li>
+</ul>
+
+<h2>Parameters</h2>
+<h3>Global (machine) parameters</h3>
+<ul>
+<li><b>Mode</b> - sets how PeerEnv interprets input signals. <i>Immediate</i> simply
+takes the input sample at that moment in time, <i>Absolute</i> takes the positive
+value of the input, and <i>Envelope</i> tracks the volume level of the signal.<br>
+<img src="BTDSys PeerEnv Modes.gif" alt="PeerEnv modes of operation">
+</li>
+
+<li><b>Get From</b> - sets where the input signal is taken from in the stereo field
+(left, center or right). Obviously, if the input is mono, this has no effect.</li>
+
+<li><b>Inertia</b> - glide time for Min and Max parameters.</li>
+</ul>
+
+<h3>Track parameters</h3>
+<ul>
+<li><b>Min</b> and <b>Max</b> - the minimum and maximum values for the
+controlled parameter (given as a percentage of the parameter's range). When these
+values actually occur depends on the mode currently used.</li>
+
+<li><b>Center</b> and <b>Amplitude</b> - an alternative way of setting
+the control range.</li>
+
+<li><b>Extent Mode</b> - sets which of min/max and center/amp is used.
+Note that from the machine's right-click menu you can synchronise the
+two pairs of values (so they represent equivalent ranges).</li>
+
+<li><b>Track</b> - if you assign to a [T]rack parameter, which track will
+be controlled. If it's set to All, then all the machine's tracks are 
+controlled. If you assign to a [G]lobal parameter, this has no effect.</li>
+</ul>
+
+<h3>Attributes</h3>
+<ul>
+<li><b>Tick Subdivs</b> sets how many times per tick parameter data is sent. It will be
+sent on the tick, and at even intervals between ticks. Note that there is a limit to how
+fast control changes may be sent (once every 256 samples), and any attempt to exceed this limit
+will result in a slightly higher CPU load with no difference in the machine's performance.<br>
+<i>To control machines at a rate faster than once per tick, PeerEnv utilises
+'hack' methods. If these methods cause you any problems, you may disable them by 
+setting this attribute to 1.</i></li>
+
+<li><b>Rise Smoothing</b> and <b>Fall Smoothing</b> define the envelope
+follower's characteristics - these may be thought of as smoothing factors,
+or response speeds, for a rising/falling signal level.</li>
+</ul>
+
+<h2>Other notes</h2>
+<ul>
+<li>Note that if the PeerEnv machine is muted, it will cease to function properly. Hence do
+not mute the machine.</li>
+<li>To smooth out the parameter movements on the target machine, you should use inertia if available.
+Set it to a very short length (0.1 tick or less).</li>
+</ul>
+
+<h2>Contact</h2>
+<p>If you have comments or suggestions, or if you find any bugs
+please
+<a href="mailto:e@btd2001.freeserve.co.uk">email me</a>.<br>
+This machine is DONATIONWARE, so if you like it, send me something cool (eg CDs, hardware, money etc). 
+<a href="mailto:e@btd2001.freeserve.co.uk">Email</a> for details of how to get stuff to me.<br>
+Also visit <a href="http://btdsys.cjb.net">my website</a> (y'know, if you're bored).</p>
+
+<p>
+<i>Thanks to everyone who alpha tested this machine, especially Juri Puumala, K.M. Krebs and Cameron
+Bonde (Vectrex) for ideas and stuff, and whoever else I forgot.</i></p>
+
+<p><b><i>Docs and code ©Ed Powley (BTDSys), July/August 2002</i></b></p>
+
+</BODY>
+</HTML>

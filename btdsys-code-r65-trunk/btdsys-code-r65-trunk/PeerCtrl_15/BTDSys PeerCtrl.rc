@@ -1,0 +1,268 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BTDSys PeerCtrl.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SETTINGSDIALOG DIALOGEX 0, 0, 366, 218
+STYLE DS_SETFONT | DS_MODALFRAME | DS_NOFAILCREATE | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BTDSys PeerCtrl - Settings"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "A&ssignments:",IDC_STATIC,7,7,93,11
+    CONTROL         "Tree1",IDC_ASSIGNTREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | TVS_FULLROWSELECT | WS_BORDER | WS_TABSTOP,7,18,93,163
+    COMBOBOX        IDC_MACHINECOMBO,107,18,139,123,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_PARAMLIST,107,35,139,134,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Track:",IDC_STATIC,107,169,27,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_TRACKCOMBO,135,169,48,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Update",IDC_ARROWBUTTON,7,185,43,13
+    PUSHBUTTON      "&Add",IDC_ADDBUTTON2,57,185,43,13
+    PUSHBUTTON      "&Clear",IDC_CLEARBUTTON,7,198,43,13
+    PUSHBUTTON      "&Delete",IDC_DELBUTTON,57,198,43,13
+    PUSHBUTTON      "Machine &Info...",IDC_MACINFOBUTTON,107,7,64,11
+    PUSHBUTTON      "&Param Info...",IDC_PARINFOBUTTON,182,7,64,11
+    PUSHBUTTON      "De&fault",IDC_RESETBUTTON,310,18,34,12
+    CONTROL         "",IDC_MAPPINGENVELOPE,
+                    "{396D2EB7-53AA-11D1-A1D9-4676EE000000}",WS_TABSTOP,261,35,98,91
+    PUSHBUTTON      "C&ontrol Plugin Settings...",IDC_PLUGINBTN,250,169,109,12
+    DEFPUSHBUTTON   "OK",IDOK,309,185,50,26
+    LTEXT           "Value Mapping",IDC_STATIC,253,18,49,12
+    CTEXT           "P\na\nr\na\nm\nV\na\nl\nu\ne",IDC_STATIC,250,35,10,90
+    RTEXT           "Specified Value",IDC_STATIC,266,129,93,10
+    PUSHBUTTON      "&MIDI CC Settings...",IDC_MIDICCBTN,250,152,109,12
+    PUSHBUTTON      "+",IDC_MAPPINGWINDOW,345,18,14,12
+END
+
+IDD_MIDIDIALOG DIALOG  0, 0, 314, 130
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BTDSys PeerCtrl - MIDI CC Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,3,113,50,14
+    CTEXT           "Info here",IDC_ASSIGNINFO,3,3,308,19,SS_SUNKEN
+    LTEXT           "Controller to use:",IDC_STATIC,13,38,57,12
+    COMBOBOX        IDC_CCCOMBO,74,34,68,151,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "[Move a controller and its channel/controller number will be displayed here]",IDC_LASTCONTROLLER,146,34,156,21
+    LTEXT           "Channel:",IDC_STATIC,13,51,55,10
+    COMBOBOX        IDC_CHANNELCOMBO,74,48,68,134,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Feedback thru MIDI out (for Pocket Dial), use device",IDC_FEEDBACKCHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,64,182,10
+    CONTROL         "Allow inc/dec (for Pocket Dial)",IDC_INCDECCHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,78,162,10
+    COMBOBOX        IDC_OUTDEVCOMBO,196,62,108,92,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "^ This device MUST be selected as an ""output device"" in Buzz's preferences!",IDC_STATIC,196,78,106,29
+    CONTROL         "Wrap values at ends of range",IDC_INCDECWRAPCHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,29,90,150,8
+    GROUPBOX        "MIDI Controllers",IDC_STATIC,3,26,308,83
+END
+
+IDD_PLUGINAXESDIALOG DIALOG  0, 0, 251, 213
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Bound Axes",IDC_STATIC,7,7,105,10
+    LISTBOX         IDC_BOUNDLIST,7,17,237,80,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Available Axes",IDC_STATIC,7,101,86,10
+    LISTBOX         IDC_AVAILLIST,7,111,237,80,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add",IDC_ARROWBUTTON,207,98,17,12
+    PUSHBUTTON      "Del",IDC_DELBUTTON,227,98,17,12
+    DEFPUSHBUTTON   "OK",IDOK,7,194,237,12
+    PUSHBUTTON      "Info",IDC_ABOUTAXIS,187,98,17,12,NOT WS_VISIBLE
+END
+
+IDD_MAPPINGDIALOG DIALOGEX 0, 0, 212, 212
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_MAPPINGENVELOPE,
+                    "{396D2EB7-53AA-11D1-A1D9-4676EE000000}",WS_TABSTOP,0,0,212,212
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SETTINGSDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        VERTGUIDE, 100
+        VERTGUIDE, 107
+        VERTGUIDE, 246
+        VERTGUIDE, 250
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 211
+        HORZGUIDE, 18
+        HORZGUIDE, 30
+        HORZGUIDE, 35
+        HORZGUIDE, 152
+        HORZGUIDE, 164
+        HORZGUIDE, 169
+        HORZGUIDE, 181
+        HORZGUIDE, 185
+        HORZGUIDE, 198
+    END
+
+    IDD_MIDIDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 311
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 127
+    END
+
+    IDD_PLUGINAXESDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 206
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SETTINGSDIALOG DLGINIT
+BEGIN
+    IDC_MAPPINGENVELOPE, 0x376, 20, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x0f31, 0x0000, 0x0f4c, 0x0000, 0x0000, 
+0x0000, 
+    0
+END
+
+IDD_MAPPINGDIALOG DLGINIT
+BEGIN
+    IDC_MAPPINGENVELOPE, 0x376, 20, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x20de, 0x0000, 0x23a8, 0x0000, 0x0000, 
+0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+SKINLED                 BITMAP                  "skinled(0,0).bmp"
+SKIN                    BITMAP                  "skin.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// POSITION
+//
+
+SKINLEDPOS POSITION 
+BEGIN
+    0x0000
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// COLOR
+//
+
+TEXTCOLOR COLOR 
+BEGIN
+    0xffff, "\377" 
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\BTDSys PeerCtrl.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

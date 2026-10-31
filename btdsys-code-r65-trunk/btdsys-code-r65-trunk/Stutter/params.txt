@@ -1,0 +1,20 @@
+0 paraWaveNo
+1 paraTrigger
+2 paraStart
+3 paraEnd
+4 paraInertiaA
+5 paraLoopDir
+6 paraLoopTime
+7 paraRate
+8 paraRatePar
+9 paraVolume
+10paraXFade
+11paraInertiaB
+
+attrEndLength
+attrLoopLenMode
+InertiaA:
+2,3
+
+InertiaB:
+6,7,9

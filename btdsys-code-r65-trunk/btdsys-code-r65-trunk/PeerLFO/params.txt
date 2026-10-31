@@ -1,0 +1,37 @@
+GLOBAL
+0 OnOff
+1 GlobalAmp
+2 Phase
+3 Shape
+ 0 Sine
+ 1 Square
+ 2 Tri
+ 3 RampUp
+ 4 RampDn
+ 5 Random
+ 6 Wander
+ 7 Wavetable
+ 8 AlwaysMin
+ 9 AlwaysMax
+ 10AlwaysCenter
+4 WaveNo
+5 MinDiff
+6 Period
+7 PeriodUnit
+ 0 tick/16
+ 1 ms
+ 2 Hz/4096
+8 Inertia
+
+TRACK
+9 Min
+10Max
+11Center
+12Ampl
+13ExtentMode
+14UpdFreq
+15TrackPhase
+16Track
+
+ATTR
+HeedStopBtn

@@ -1,0 +1,889 @@
+Scales.txt file for BTDSys PeerScale
+Source: http://www.xs4all.nl/~huygensf/scala/ 
+  (via http://zabumba.free.fr/zikzip/modz.html)
+
+
+Ditonic
+
+5 7 Honchoshi: Japan
+
+7 5 Niagari: Japan
+
+10 2 Warao ditonic: South America
+
+_______________________________________
+Tritonic
+
+3 4 5 Peruvian tritonic 2
+
+3 7 2 Ute tritonic
+
+4 3 5 Peruvian tritonic 1, Raga Malasri
+
+5 2 5 Sarvasri Raga, Warao tritonic: South America
+
+5 5 2 Sansagari: Japan
+
+6 1 5 Ongkari Raga
+
+_________________________________________
+Tetratonic
+
+1 5 1 5 Messiaen truncated mode 5
+
+5 1 5 1 Messiaen truncated mode 5 inverse
+
+2 4 2 4 Messiaen truncated mode 6
+
+4 2 4 2 Messiaen truncated mode 6 inverse
+
+1 4 3 4 Lavangi Raga
+
+2 1 7 2 Warao tetratonic: South America
+
+2 2 3 5 Eskimo tetratonic (Alaska: Bethel)
+
+2 3 2 5 Genus primum
+
+2 3 4 3 Bhavani  Raga
+
+2 4 5 1 Sumukam Raga
+
+4 3 3 2 Mahathi Raga 
+
+3 4 3 2 Bi Yu: China
+
+5 2 3 2 Genus primum inverse
+
+_________________________________________________________
+Pentatonic
+
+2 3 2 1 4 Han-kumoi: Japan, Raga Shobhavari
+
+2 1 4 1 4 Hira-joshi, Kata-kumoi, Yona Nuki mineur: Japan
+
+1 4 2 1 4 Hon-kumoi-joshi, Sakura, Akebono II: Japan, Olympos Enharmonic, Raga Salanganata, Saveri, Gunakri (Gunakali), Latantapriya
+
+1 4 2 3 2 Kokin-joshi, Miyakobushi, Han-Iwato, In Sen: Japan, Raga Vibhavari (Revati), Bairagi, Lasaki
+
+1 4 1 4 2 Iwato: Japan
+
+2 3 2 2 3 Ritusen, Ritsu (Gagaku): Japan, Zhi, Zheng: China, Raga Devakriya, Durga, Suddha Saveri, Arabhi, Scottish Pentatonic, Ujo, P'yongjo: Korea, Major complement
+
+2 2 3 2 3 Major Pentatonic, Ryosen, Yona Nuki majeur: Japan, Man Jue, Gong: China, Raga Bhopali (Bhup), Mohanam, Deskar, Bilahari, Kokila, Jait Kalyan, Peruvian Pentatonic 1, Ghana pent.2
+
+2 3 2 3 2 Yo: Japan, Suspended Pentatonic, Raga Madhyamavati, Madhmat Sarang, Egyptian, Shang, Rui Bin, Jin Yu, Qing Yu: China
+
+2 3 3 2 2 Chaio: China
+
+2 2 2 3 3 Kung: China
+
+1 4 2 2 3 Altered Pentatonic, Raga Manaranjani II
+
+2 1 2 4 3 Abhogi Raga
+
+4 2 1 4 1 Amritavarshini Raga, Malashri, Shilangi
+
+2 1 2 3 4 Audav Tukhari Raga
+
+4 1 4 2 1 Bhinna Shadja Raga, Kaushikdhvani, Hindolita
+
+1 2 4 1 4 Balinese Pelog, Raga Bhupalam, Bhupala Todi, Bibhas
+
+2 2 3 1 4 Bhupeshwari Raga, Janasammodini
+
+3 2 4 2 1 Chandrakauns Raga (modern), Marga Hindola, Rajeshwari
+
+3 2 4 1 2 Chandrakauns (kafi) Raga, Surya, Varamu
+
+3 2 3 3 1 Chandrakauns (kiravani) Raga
+
+1 2 3 2 4 Chhaya Todi  Raga
+
+2 3 2 4 1 Desh  Raga
+
+1 6 1 3 1 Deshgaur  Raga
+
+5 2 1 3 1 Devaranjani (Devaranji) Raga
+
+3 2 2 3 2 Minor Pentatonic, Raga Dhani (Suddha Dhanyasi), Abheri, Udhayaravi Chandrika, Qing Shang, Gu Xian, Jia Zhong, Yu: China, P'yongjo-kyemyonjo: Korea, Minyo: Japan, Peruvian Pentatonic 2, Blues Pentatonic
+
+4 2 1 2 3 Dhavalashri Raga
+
+4 1 2 4 1 Gambhiranata, Ryukyu: Japan,  Raga
+
+1 4 2 4 1 Gauri Raga
+
+4 1 3 3 1 Bacovia: Romania, Raga Girija
+
+2 2 3 4 1 Hamsadhvani Raga (Hansadhvani)
+
+3 3 2 2 2 Harikauns Raga, Chin: China
+
+3 2 1 4 2 Jayakauns Raga 
+
+4 1 4 1 2 Khamaji Durga Raga
+
+3 2 2 1 4 Kokil Pancham  Raga
+
+1 4 3 3 1 Kshanika Raga
+
+2 2 2 5 1 Kumurdaki (Kumudki) Raga
+
+5 2 2 1 2 Kuntvarali Raga
+
+3 2 3 2 2 Malkauns (Malakosh) Raga, Raga Hindola, Man Gong, Quan Ming, Yi Ze, Jiao: China
+
+4 3 2 2 1 Mamata Raga
+
+1 3 3 3 2 Manaranjani I Raga
+
+2 5 2 1 2 Matha Kokila (Matkokil) Raga
+
+1 3 1 3 4 Megharanjani Raga, Syrian pentatonic
+
+1 3 1 6 1 Megharanj Raga
+
+3 1 3 2 3 Mohanangi Raga
+
+3 3 1 4 1 Multani Raga
+
+1 1 4 1 5 Nabhomani Raga
+
+4 1 2 2 3 Nagasvaravali Raga, Raga Mand
+
+3 2 2 4 1 Nata Raga, Udayaravicandrika, Madhuranjani
+
+2 2 5 2 1 Neroshta Raga
+
+4 2 3 2 1 Hindol  Raga (Sunada Vinodini), Sanjh ka Hindol
+
+2 3 3 3 1 Priyadharshini  Raga
+
+2 1 2 2 5 Purnalalita Raga, Chad Gadyo: Jewish, Ghana Pentatonic 1, Nando-kyemyonjo: Korea
+
+5 2 2 2 1 Puruhutika Raga, Purvaholika
+
+1 3 3 2 3 Rasika Ranjani Raga, Vibhas (marva), Scriabin
+
+2 3 4 2 1 Rasranjani Raga
+
+1 3 3 1 4 Reva Raga, Revagupti, Ramkali, Vibhas (bhairava)
+
+3 3 1 3 2 Samudhra Priya Raga, Madhukauns (pentatonic)
+
+1 5 1 1 4 Saugandhini Raga, Yashranjani
+
+2 1 4 2 3 Sivaranjini (Shivranjani) Raga, Akebono I: Japan, Dorian Pentatonic
+
+3 4 1 2 2 Shailaja Raga
+
+2 4 1 2 3 Shri Kalyan Raga
+
+2 4 1 4 1 Vaijayanti Raga, Hamsanada
+
+4 3 2 1 2 Valaji Raga
+
+4 1 2 1 4 Zilaf Raga
+
+2 2 3 3 2 Dominant Pentatonic
+
+4 1 2 3 2 Mixolydian Pentatonic, Raga Savethri
+
+3 2 2 2 3 Minor added sixth Pentatonic, Kyemyonjo: Korea
+
+_______________________________________________________________________________________
+Hexatonic
+
+2 2 2 2 2 2 Whole-tone, Messiaen mode 1, Raga Gopriya, Anhemitonic
+
+2 3 2 2 1 2 P'yongjo: Korea, Yosen: Japan, Raga Darbar, Narayani, Suposhini, Andolika, Gorakh Kalyan, Mixolydian Hexatonic
+
+2 2 2 3 1 2 Prometheus, Raga Barbara
+
+1 3 2 3 1 2 Prometheus Neapolitan
+
+3 2 1 1 3 2 Blues scale I, Raga Nileshwari
+
+1 2 2 3 2 2 Ritsu: Japan, Raga Suddha Todi
+
+2 2 1 2 2 3 Arezzo Major Diatonic Hexachord, Raga Kambhoji, Devarangini, Scottish Hexatonic
+
+2 1 2 2 3 2 Minor Hexatonic, Raga Palasi, Manirangu, Nayaki, Yo: Japan, Eskimo Hexatonic 1 (Alaska: King Island)
+
+2 2 2 2 3 1 Eskimo Hexatonic 2 (Alaska: Point Hope)
+
+2 1 4 2 2 1 Hawaiian
+
+2 1 2 1 3 3 Pyramid Hexatonic
+
+1 2 2 1 3 3 Double-Phrygian Hexatonic
+
+2 1 3 1 4 1 Raga Amarasenapriya
+
+2 1 2 4 1 2 Bagesri Raga, Sriranjani, Kapijingla
+
+1 3 3 1 3 1 Bauli Raga
+
+3 1 1 2 3 2 Bhanumanjari Raga, Jog
+
+1 2 3 2 2 2 Bhavani Raga
+
+2 3 2 1 3 1 Bhinna Pancama Raga
+
+2 2 2 1 4 1 Caturangini Raga
+
+1 1 4 1 2 3 Chandrajyoti Raga
+
+1 3 2 1 1 4 Dhavalangam Raga
+
+2 2 1 1 1 5 Dipak Raga
+
+1 2 2 2 3 2 Gandharavam Raga
+
+1 3 1 2 4 1 Gaula Raga
+
+2 1 2 3 3 1 Ghantana Raga, Kaushiranjani (Kaishikiranjani)
+
+3 2 2 1 2 2 Gopikavasantam Raga, Desya Todi, Phrygian Hexatonic
+
+1 2 3 2 3 1 Gurjari Raga Todi
+
+1 3 2 3 2 1 Hamsanandi Raga, Marva, Pancama, Puriya
+
+2 2 1 4 2 1 Hamsa Vinodini Raga
+
+4 1 2 2 2 1 Hari Nata Raga, Genus secundum
+
+1 3 2 2 1 3 Hejjajji Raga
+
+2 4 1 1 2 2 Jaganmohanam Raga
+
+1 4 2 2 2 1 Jivantika Raga
+
+3 3 1 3 1 1 Jivantini Raga, Gaurikriya
+
+4 2 1 1 2 2 Jyoti Raga
+
+1 3 3 1 1 3 Kalagada Raga
+
+1 4 2 1 1 3 Kalakanthi Raga
+
+1 3 1 2 2 3 Kalavati Raga, Ragamalini
+
+4 1 2 1 2 2 Kamalamanohari Raga
+
+4 1 2 2 1 2 Khamas Raga, Baduhari
+
+2 2 3 2 2 1 Kumud Raga, Sankara (Shankara), Lydian Hexatonic
+
+1 3 1 3 3 1 Lalita Raga, Sohini, Hamsanandi, Lalit Bhairav
+
+2 2 3 1 3 1 Latika Raga
+
+3 3 1 2 1 2 Madhukauns Raga (hexatonic)
+
+2 4 1 3 1 1 Malarani Raga(Hamsanada)
+
+1 3 3 2 1 2 Malayamarutam Raga
+
+2 1 4 2 1 2 Manavi Raga
+
+1 3 2 1 4 1 Mandari Raga, Gamakakriya, Hamsanarayani
+
+3 2 2 2 1 2 Manohari Raga
+
+2 2 2 3 2 1 Mruganandana Raga
+
+2 3 2 2 2 1 Nagagandhari Raga
+
+2 2 1 2 4 1 Nalinakanti Raga, Kedaram
+
+2 3 2 1 2 2 Navamanohari Raga
+
+1 4 2 1 3 1 Padi Raga
+
+4 1 2 1 3 1 Paraju Raga, Ramamanohari, Simhavahini, Sindhu Ramakriya, Kamalamanohari
+
+1 4 2 1 2 2 Phenadyuti Raga, Insen, Honchoshi, Niagari: Japan
+
+1 2 2 1 4 2 Honchoshi plagal form: Japan
+
+1 3 1 2 1 4 Purna Pancama Raga, Malahari, Geyahejjajji, Kannadabangala
+
+2 2 1 4 1 2 Rageshri (Rageshwari) Raga, Nattaikurinji
+
+2 1 3 3 2 1 Ranjani Raga, Rangini
+
+3 1 2 1 4 1 Rasamanjari Raga
+
+1 4 2 2 1 2 Rasavali Raga
+
+1 3 1 4 1 2 Rudra Pancama Raga
+
+1 2 4 2 1 2 Salagavarali Raga
+
+2 3 2 3 1 1 Brindabani Sarang Raga, Megh (Megh Malhar)
+
+2 2 1 3 3 1 Sarasanana Raga
+
+2 4 1 2 1 2 Sarasvati Raga
+
+4 1 2 1 1 3 Saravati (Sharavati) Raga
+
+2 1 3 1 3 2 Simharava Raga (Sinharavam)
+
+2 1 2 2 4 1 Sindhura Kafi Raga
+
+2 2 1 2 3 2 Siva Kambhoji Raga, Vivardhini
+
+2 1 2 2 2 3 Suddha Bangala Raga, Gauri Velavali
+
+1 1 3 3 1 3 Raga Suddha Mukhari
+
+1 2 2 2 1 4 Raga Suddha Simantini
+
+2 1 3 1 1 4 Syamalam Raga
+
+3 2 2 1 3 1 Takka Raga
+
+4 1 2 3 1 1 Tilang Raga, Savitri, Brindabani Tilang
+
+2 1 4 1 2 2 Trimurti Raga
+
+1 3 1 4 2 1 Vasanta Raga, Chayavati
+
+1 3 1 3 2 2 Vasantabhairavi Raga
+
+2 1 3 1 2 3 Vijayanagari Raga
+
+1 1 4 1 4 1 Vijayasri Raga
+
+4 2 1 3 1 1 Vijayavasanta Raga
+
+1 2 2 3 3 1 Viyogavarali Raga
+
+4 2 1 2 1 2 Vutari Raga
+
+2 2 2 1 2 3 Yamuna Kalyani Raga, Kalyani Keseri, Ancient Chinese
+
+1 1 4 1 1 4 Messiaen mode 5
+
+4 1 1 4 1 1 Messiaen mode 5 inverse
+
+1 3 1 3 1 3 Messiaen truncated mode 3, Prometheus (Liszt)
+
+3 1 3 1 3 1 Messiaen truncated mode 3 inverse, Major Augmented, Genus tertium
+
+1 2 3 1 2 3 Messiaen truncated mode 2
+
+1 3 2 1 3 2 Messiaen truncated mode 2
+
+2 1 3 2 3 1 Takemitsu Tree Line mode 1
+
+2 1 3 2 2 2 Takemitsu Tree Line mode 2
+
+______________________________________________________________________________________________
+Heptatonic
+
+1 2 2 1 2 2 2 Locrian G.Mixolydian, G.Hyperdorian, M.Hypophrygian, M.Locrian, Pien chih: China, Makam Lami, Yishtabach: Jewish
+
+2 2 1 2 2 2 1  Major G.Lydian, M.Ionian, M.Hypolydian, Bilaval That, Mela Shankarabharanam, Ghana Heptatonic, Peruvian major, 4th plagal Byzantine, Ararai: Ethiopian, Makam Cargah, Ajam Ashiran, Dastgah Mahur, Dastgah Rast Panjgah
+
+2 1 2 2 2 1 2 Dorian G.Phrygian, M.Dorian, M.Hypomixolydian, Kafi That, Mela Kharaharapriya, Raga Bageshri, Sriraga, Bhimpalasi, Mischung 5, Gregorian nr.8, Eskimo Heptatonic, Yu: China, Hyojo, Oshikicho, Banshikicho: Japan
+
+1 2 2 2 1 2 2 Phrygian G.Dorian, M.Phrygian, G.M.Hypoaeolian, Bhairavi That, Mela Hanumatodi, Raga Asavari (Asaveri), Raga Bilashkhani Todi, In: Japan, Makam Kurd, Gregorian nr.3, Ousak: Greece, Major inverse
+
+2 2 2 1 2 2 1 Lydian, G.Hypolydian, M.Lydian, Kalyan That (Yaman), Mela Mecakalyani, Raga Shuddh Kalyan, Ping, Kung: China
+
+2 2 1 2 2 1 2 Mixolydian G.Hypophrygian, G.Ionian (Iastian), M.Mixolydian, G.M.Hypoionian, Khamaj That, Mela Harikambhoji, Raga Harini, Janjhuti, Surati, Mischung 3, Ching, Shang: China, Gregorian nr.7
+
+2 1 2 2 1 2 2 minor-nat G.M.Hypodorian, G.M.Aeolian, G.Hyperphrygian, Natural Minor, Asavari That, Mela Natabhairavi, Raga Jaunpuri, Raga Adana, Se, Chiao: China, Gregorian nr.2, Makam Buselik, Nihavend, Peruvian minor, Geez, Ezel: Ethiopian, Kiourdi descending: Greece
+
+1 1 3 1 1 3 2 Chromatic Mixolydian
+
+1 3 1 1 3 2 1 Chromatic Lydian, Raga Lalit, Bhankar
+
+3 1 1 3 2 1 1 Chromatic Phrygian
+
+1 1 3 2 1 1 3 Chromatic Dorian, Mela Kanakangi, Raga Kanakambari
+
+1 3 2 1 1 3 1 Chromatic Hypolydian, Purvi That, Mela Kamavardhani, Raga Shri, Pantuvarali, Basant, Kasiramakriya, Suddharamakriya, Puriya Dhanashri, Dhipaka, Pireotikos: Greece
+
+3 2 1 1 3 1 1 Chromatic Hypophrygian, Blues scale III
+
+2 1 1 3 1 1 3 Chromatic Hypodorian, Raga Dvigandharabushini
+
+2 3 1 1 3 1 1 Chromatic Mixolydian inverse
+
+1 1 2 3 1 1 3 Chromatic Phrygian inverse
+
+1 1 3 1 1 2 3 Chromatic Hypophrygian inverse
+
+3 1 1 3 1 1 2 Chromatic Hypodorian inverse
+
+2 1 2 2 2 2 1 Jazz Minor, Melodic Minor ascending,Minor-Major, Mela Gaurimanohari, Raga Patdip, Velavali, Deshi(2), Mischung 1, Hawaiian
+
+2 1 2 2 1 3 1 Mischung 4, Harmonic Minor, Spanish gipsy, Pilu That, Mela Kiravani, Raga Kiranavali, Kirvani, Kalyana Vasantha, Deshi(3), Maqam Bayat-e-Esfahan, Sultani Yakah, Zhalibny Minor
+
+1 3 1 2 2 1 2 Zanjaran, Harmonic Minor inverse, Mela Cakravaka, Raga Ahir Bhairav, Bindumalini, Vegavahini, Makam Hicaz
+
+2 2 1 2 1 3 1  Ethiopian, Harmonic Major, Mela Sarasangi, Raga Haripriya, Mischung 2, Tabahaniotiko: Greece
+
+1 2 1 3 1 2 2 Huzzam Makam, Maqam Saba Zamzam, Phrygian flat 4
+
+2 2 1 3 1 2 1 Ionian sharp 5
+
+2 2 2 2 1 2 1 Lydian Augmented, Lydian sharp 5
+
+1 2 2 1 3 1 2 Locrian natural 6, Maqam Tarznauyn
+
+2 2 1 1 2 2 2 Major Locrian
+
+2 1 2 1 2 2 2 Minor Locrian, Half Diminished, Locrian sharp 2, Minor flat 5
+
+1 2 1 2 2 2 2 Ravel, Super Locrian, Altered, Diminished Whole-tone, Locrian flat 4, Pomeroy
+
+2 1 2 1 2 3 1 Locrian no.2
+
+1 2 1 2 2 1 3 Ultra Locrian, Mixolydian sharp 1
+
+1 2 2 1 2 1 3 Locrian double-flat 7
+
+2 3 1 2 1 2 1 Nohkan Flute scale: Japan
+
+2 1 1 3 1 2 2 Sabach (Sambah): Greece
+
+2 1 2 1 3 1 2 Makam Karcigar, Maqam Nahawand Murassah, Dorian flat 5, Kiourdi ascending, Kartzihiar: Greece
+
+2 1 2 1 3 2 1 Jeths' mode
+
+1 1 3 2 1 2 2 Ratnangi Mela, Raga Phenadyuti
+
+1 1 3 2 1 3 1 Ganamurti Mela, Raga Ganasamavarali
+
+1 1 3 2 2 1 2 Vanaspati Mela, Raga Bhanumati
+
+1 1 3 2 2 2 1 Manavati Mela, Raga Manoranjani
+
+1 1 3 2 3 1 1 Tanarupi Mela, Raga Tanukirti
+
+1 2 2 2 1 1 3  Senavati Mela, Raga Senagrani, Malini
+
+1 2 2 2 1 3 1 Neapolitan Minor, Mela Dhenuka, Raga Dhunibinnashadjam, Maqam Shahnaz Kurdi
+
+1 2 2 2 2 2 1 Neapolitan Major, Phrygian Major, Mela Kokilapriya, Raga Kokilaravam
+
+1 2 2 2 2 1 2 Jazz Minor inverse, Phrygian-Mixolydian, Raga Natabharanam, Ahiri Todi, Mela Natakapriya, 
+
+1 2 2 2 3 1 1 Rupavati Mela
+
+1 3 1 1 2 3 1 Lalita Raga, Chromatic Hypolydian inverse, Raga Suddha Pancama
+
+1 3 1 2 1 1 3 Gipsy Hexatonic, Mela Gayakapriya, Raga Kalakanti
+
+1 3 1 2 1 2 2 Dorico Flamenco: Spain, Mela Vakulabharanam, Alhijaz: Arabic, Raga Jogiya, Vativasantabhairavi, Ahava Rabba: Jewish, Maqam Humayun, Hitzaz: Greece, Harmonic Major inverse, Phrygian Dominant
+
+1 3 1 2 1 3 1 Persian, Major Gipsy, Double Harmonic Major, Bhairav That, Mela Mayamalavagaula, Raga Paraj, Kalingada, Byzantine Liturgical Chromatic, Hitzazkiar: Greece, Maqam Zengule, Hijaz Kar, Suzidil
+
+1 3 1 2 2 2 1 Suryakanta Mela, Bhairubahar That, Raga Supradhipam, Sowrashtram
+
+1 3 1 2 3 1 1 Hatakambari Mela, Raga Jeyasuddhamalavi
+
+2 1 2 1 1 3 2 Blues Modified
+
+2 1 2 2 1 1 3 Mela Jhankaradhvani, Raga Jhankara Bhramavi
+
+2 1 2 2 3 1 1 Mela Varunapriya, Viravasantham
+
+2 2 1 2 1 1 3 Keseri Raga, Mela Mararanjani
+
+2 2 1 2 1 2 2 Mischung 6, Mixolydian flat 6, Major-Minor, Mela Carukesi, Raga Charukeshi, Tarangini
+
+2 2 1 2 3 1 1 Samanta, Mela Naganandini, Raga Nagabharanam
+
+3 1 1 2 1 1 3 Yagapriya Mela, Raga Kalahamsa
+
+3 1 1 2 1 2 2 Mela Ragavardhani, Raga Cudamani
+
+3 1 1 2 1 3 1 Sengiach: Greece, Mela Gangeyabhusani, Raga Gangatarangini
+
+3 1 1 2 2 1 2 Bluesy R&R, Mela Vagadhisvari, Raga Bhogachayanata, Nandkauns, Ganavaridhi
+
+3 1 1 2 2 2 1 Houzam: Greece, Mela Sulini, Raga Sailadesakshi, Raga Trishuli
+
+3 1 1 2 3 1 1 None Raga, Mela Calanata, Chromatic Dorian inverse
+
+1 1 4 1 1 1 3 Salaga Mela
+
+1 1 4 1 1 2 2 Jalarnava Mela
+
+1 1 4 1 1 3 1 Varali Raga, Mela Jhalavarali, Jinavali
+
+1 1 4 1 2 1 2 Navanitam Mela, Raga Nabhomani
+
+1 1 4 1 2 2 1 Pavani Mela, Raga Kumbhini
+
+1 1 4 1 3 1 1 Mela Raghupriya, Raga Ravikriya, Ghandarva
+
+1 2 3 1 1 1 3 Girvani Raga, Mela Gavambodhi
+
+1 2 3 1 1 2 2 Bhavapriya Mela, Raga Bhavani, Kalamurti
+
+1 2 3 1 1 3 1 Todi That, Mela Shubhapantuvarali, Raga Multani, Gamakasamantam, Chromatic Lydian inverse
+
+1 2 3 1 2 1 2 Mela Sadvidhamargini, Raga Sthavarajam, Tivravahini
+
+1 2 3 1 2 2 1 Sauviram,Raga, Mela Suvarnangi
+
+1 2 3 1 3 1 1 Divyamani Mela
+
+1 3 2 1 1 1 3 Foulds' Mantra of Will scale, Mela Dhavalambari
+
+1 3 2 1 1 2 2 Namanarayani Mela, Raga Narmada, Pratapa
+
+1 3 2 1 2 1 2  Petrushka chord, Mela Ramapriya, Raga Ramamanohari, Romanian Major
+
+1 3 2 1 2 2 1 Marva That, Mela Gamanasrama, Raga Partiravam, Puriya, Puriya Kalyan, Sohani, Peiraiotikos: Greece
+
+1 3 2 1 3 1 1 Visvambhari Mela, Raga Vamsavathi
+
+1 3 2 2 2 1 1 Verdi's Enigmatic ascending
+
+1 3 1 3 2 1 1 Verdi's Enigmatic descending
+
+2 1 3 1 1 1 3 Mela Syamalangi, Raga Shyamalam
+
+2 1 3 1 1 2 2 Camara Raga, Mela Sanmukhapriya, Chinthamani
+
+2 1 3 1 1 3 1 Minor Gipsy, Mela Simhendramadhyama, Raga Madhava Manohari, Maqam Nawa Athar, Hisar, Double Harmonic Minor, Hungarian Minor, Niavent: Greece
+
+2 1 3 1 2 1 2 Nigriz: Greece, Mela Hemavati, Raga Desisimharavam, Maqam Nakriz, Tunisian, Hedjaz, Misheberekh: Jewish, Souzinak (Peiraiotiko Minore), Dorian sharp 4, Kaffa, Gnossiennes
+
+2 1 3 1 2 2 1 Lydian Diminished, Mela Dharmavati, Raga Arunajualita, Dumyaraga, Madhuvanti, Ambika
+
+2 1 3 1 3 1 1 Nitimati Mela, Raga Nisada, Kaikavasi
+
+2 2 2 1 1 1 3 Kantamani Mela, Raga Kuntala, Srutiranjani
+
+2 2 2 1 1 2 2 Lydian Minor, Mela Risabhapriya, Raga Ratipriya
+
+2 2 2 1 1 3 1 Latangi Mela, Raga Gitapriya, Hamsalata
+
+2 2 2 1 2 1 2 Bartok, Lydian Dominant, Mela Vacaspati, Raga Bhusavati, Overtone, Lydian-Mixolydian
+
+2 2 2 1 3 1 1 Mela Citrambari, Raga Chaturangini
+
+2 2 1 4 1 1 1 Ragesri Raga
+
+2 3 2 2 1 1 1 Sorati Raga, Sur Malhar
+
+3 1 2 1 1 1 3 Sucaritra Mela, Raga Santanamanjari
+
+3 1 2 1 1 2 2 Mela Jyotisvarupini, Raga Jotismatti
+
+3 1 2 1 1 3 1 Mela Dhatuvardhani, Raga Dhauta Pancama, Devarashtra
+
+3 1 2 1 2 1 2 Hungarian Major, Mela Nasikabhusani, Raga Nasamani
+
+3 1 2 1 2 2 1 Kosalam Mela, Raga Kusumakaram, Lydian sharp 2
+
+3 1 2 1 3 1 1 Mela Rasikapriya, Raga Rasamanjari, Hamsagiri
+
+3 1 2 2 1 2 1 Aeolian flat 1
+
+4 1 2 2 1 1 1 Madhuri Raga
+
+1 3 1 1 3 1 2 Oriental, Raga Ahira-Lalita, Minor Gipsy inverse, Tsinganikos: Greece
+
+2 2 2 2 2 1 1 Leading Whole-tone
+________________________________________________________________
+Octatonic
+
+1 3 1 1 1 2 2 1 Bhatiyar Raga
+
+2 1 3 1 1 1 1 2 Cintamani Raga
+
+2 1 2 2 2 1 1 1 Mian Ki Malhar Raga, Bahar, Sindhura
+
+2 1 2 2 1 1 1 2 Mukhari Raga, Anandabhairavi, Deshi, Gregorian nr.1, Dorian/Aeolian mixed
+
+1 3 1 1 1 1 3 1 Ramkali Raga (Ramakri)
+
+1 3 1 2 1 1 2 1 Saurashtra Raga
+
+2 1 1 1 2 2 1 2 Minor Bebop, Raga Zilla, Mixolydian/Dorian mixed
+
+2 2 1 2 2 1 1 1 Genus diatonicum, Dominant Bebop, Raga Khamaj, Desh Malhar, Alhaiya Bilaval, Maqam Shawq Awir, Gregorian nr.6, Major/Mixolydian mixed, Chinese Eight-Tone, Rast: Greece
+
+2 2 1 2 1 1 2 1 Bebop Major, Altered Mixolydian
+
+2 1 2 1 1 2 1 2 Blues scale II
+
+2 1 2 1 1 1 3 1 Algerian
+
+1 2 1 1 2 1 2 2 Spanish Phrygian
+
+1 2 1 1 1 2 2 2 Espla's scale, Eight-tone Spanish
+
+1 2 2 1 1 1 3 1 Half-diminished Bebop
+
+1 2 3 1 1 2 1 1 Neveseri: Greece
+
+2 1 2 1 2 1 2 1 Diminished, Modus conjunctus, Messiaen mode 2 inverse, Whole-Half step scale
+
+2 2 1 1 1 2 2 1 Ishikotsucho: Japan, Raga Yaman Kalyan, Chayanat, Bihag, Hamir Kalyani, Kedar, Gaud Sarang, Genus diatonicum veterum correctum, Gregorian nr.5, Kubilai's Mongol scale, Major/Lydian mixed
+
+1 3 1 1 2 2 1 1 Verdi's Scala enigmatica
+
+2 1 2 2 1 1 2 1 Zirafkend: Arabic
+
+1 1 1 2 2 2 1 2 Adonai Malakh: Jewish
+
+1 2 1 2 2 1 2 1 Magen Abot: Jewish
+
+2 1 2 2 1 2 1 1 Gregorian nr.4, Maqam Nahawand, Raga Suha (Suha Kanada), Utility Minor
+
+1 1 1 2 2 1 3 1 Harmonic and Neapolitan Minor mixed
+
+1 3 1 2 1 2 1 1 Hijaz Maqam
+
+1 2 1 1 1 3 1 2 Shadd'araban Maqam
+
+1 2 1 2 1 2 1 2 Octatonic, Messiaen mode 2, Dominant Diminished, Diminished Blues, Half-Whole step scale
+
+1 1 1 3 1 1 1 3 Messiaen mode 4
+
+3 1 1 1 3 1 1 1 Messiaen mode 4 inverse
+
+1 1 2 2 1 1 2 2 Messiaen mode 6
+
+2 2 1 1 2 2 1 1 Messiaen mode 6 inverse
+
+1 1 1 2 2 1 2 2 Phrygian/Aeolian mixed
+
+1 2 2 1 1 1 2 2 Phrygian/Locrian mixed
+
+1 2 2 1 1 2 2 1 Van der Horst Octatonic
+
+1 2 2 1 2 2 1 1 Prokofiev
+
+1 2 1 2 1 2 2 1 Shostakovich
+__________________________________________________________
+Enneatonic
+
+1 1 2 1 1 2 1 1 2 Messiaen mode 3, Tsjerepnin
+
+2 1 1 2 1 1 2 1 1 Messiaen mode 3 inverse
+
+2 1 2 2 1 1 1 1 1 Pilu Raga, Full Minor
+
+2 1 1 1 2 2 1 1 1 Malgunji Raga, Ramdasi Malhar, Major/Dorian mixed
+
+2 2 1 2 1 1 1 1 1 Pahadi Raga
+
+2 1 1 1 1 1 2 1 2 Blues Enneatonic
+
+2 1 2 1 1 1 1 1 2 Kiourdi: Greece
+
+2 2 1 1 1 2 1 1 1 Taishikicho: Japan, Ryo: Japan, Raga Chayanat, Lydian/Mixolydian mixed
+
+1 2 1 1 2 1 1 2 1 Genus chromaticum
+
+1 2 1 1 2 1 2 1 1 Moorish Phrygian
+
+1 1 2 1 1 1 2 1 2 Youlan scale: China
+
+1 1 1 2 2 1 1 1 2 Chromatic and Diatonic Dorian mixed
+
+1 1 2 1 2 1 1 2 1 Chromatic and Permuted Diatonic Dorian mixed
+
+2 1 1 1 2 1 1 1 2 Houseini: Greece, Modes of Major Pentatonic mixed
+______________________________________________________________
+Decatonic
+
+1 1 1 1 2 1 1 1 1 2 Messiaen mode 7
+
+2 1 1 1 1 2 1 1 1 1 Messiaen mode 7 inverse
+
+2 1 1 1 2 1 1 1 1 1 m/M_mix, Major/Minor mixed
+
+2 1 1 1 1 1 2 1 1 1 Minor Pentatonic with leading tones
+
+1 1 1 1 1 2 1 2 1 1 Raga Sindhi-Bhairavi
+
+1 1 2 1 1 1 1 2 1 1 Symmetrical Decatonic
+________________________________________________________________
+Chromatic
+
+1 1 1 1 1 1 1 1 1 1 1 1 Twelve-tone Chromatic
+
+________________________________________________________________
+adds 08/05_1_intervals
+
+1 11 semi
+
+2 10 second
+
+3 9 min-third
+
+4 8 Maj-third
+
+5 7 fourth
+
+6 6 devil
+
+7 5 fift
+
+8 2 sixte-minor
+
+9 3 sixte
+
+10 2 seventh
+
+11 1 maj
+
+__________________________________________________________________
+2_triads
+
+4 3 5 Maj1
+
+3 5 4 m3-m6
+
+5 4 3 Fourth-6
+
+3 4 5 min1
+
+4 5 3 M3-6
+
+5 3 4 Fourth-m6
+
+7 2 3 Fift-6
+ 
+3 7 2  m3-m7
+
+2 3 7  sus2-4
+
+2 7 3  sus2-6
+
+7 3 2  Fift-m7
+
+3 2 7  m3-sus4
+
+7 1 4 Fift-aug1
+
+1 4 7 b2-sus4
+
+4 7 1 M3-M7
+
+7 4 1 Fift-M7
+
+4 1 7 M3-sus4
+
+1 7 4 m2-m6
+
+6 3 3 dim1
+
+3 3 6 dim2
+
+3 6 3 dim3
+
+6 4 2 b5-m7
+
+4 2 6 M3-b5
+
+2 6 4 m2-m6
+
+6 2 4 b5-m6
+
+2 4 6 m2-b5
+
+4 6 2 M3-m7
+
+6 5 1 b5-M7
+
+5 1 6 sus4-b5
+
+1 6 5 m2-5
+
+6 1 5 #4-5
+
+1 5 6 m2-b5
+
+5 6 1 sus4-M7
+
+8 2 2 aug1
+
+2 2 8 sus2-M3
+
+2 8 2 sus2-M7
+ 
+8 3 1 #5-M7
+
+3 1 8 m3-M3
+
+1 8 3 m2-6
+
+8 1 3 #5-6
+
+1 3 8 m2-M3
+
+3 8 1 m3-M7
+
+9 2 1 Sixth-M7
+
+10 1 1 seven2
+________________________________________________________________
+try
+
+4 4 4 aug
+
+3 3 3 3 dim
+
+2 2 2 2 2 2 whole tone
+
+3 4 3 3 4 4 3 twenty-four
+
+4 4 3 3 3 4 3 a
+
+4 4 4 3 3 3 3 b
+
+3 4 3 4 3 4 3 c
+
+3 3 4 4 3 3 4 d
+
+3 4 4 4 3 3 3 e
+
+4 3 3 3 3 4 4 f
+
+4 3 4 3 4 3 3 g
+
+10 4 4 3 3 poly 1
+
+8 3 8 5 z
+
+4 4 3 3 2 2 1 3 z
+
+4 3 7 3 4 3 z
+
+7 3 7 3 4 z
+
+7 7 7 3 fift+3m
+
+5 1 1 1 4 try
+
+7 3 1 1 blu
+
+1 1 3 7 blu
+
+5 5 5 5 5 5 5 5 5 5 5 5 fourth
+
+
+
+
+
+
+
+
+
+

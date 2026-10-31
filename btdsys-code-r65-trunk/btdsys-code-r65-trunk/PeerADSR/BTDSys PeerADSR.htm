@@ -1,0 +1,128 @@
+<HTML>
+<HEAD>
+<TITLE>BTDSys PeerADSR</TITLE>
+</HEAD>
+<BODY>
+
+<h1>BTDSys PeerADSR</h1>
+
+<h2>Installation</h2>
+<p>Put <i>BTDSys PeerADSR.dll</i> in your <b>Gear\Generators</b> folder.</p>
+
+<h2>Overview</h2>
+<p>PeerADSR is an envelope trigger, used to control other Buzz machines.
+Envelopes can be set up using ADSR parameters, the Buzz envelope.ocx control,
+or from wavetable samples.</p>
+
+<ul>
+<li>Add PeerADSR to your song, along with some other machine.</li>
+<li>You don't need to connect anything to PeerADSR in the machine view.</li>
+<li>Right click PeerADSR and select Assign Parameter, then click an unassigned
+track.</li>
+<li>In this dialog, choose the machine and parameter you want to control.</li>
+<li>Click OK. Now enter '1's into the trigger column in the pattern view.</li>
+</ul>
+
+<h2>About Envelope Types</h2>
+<p>Three types of envelopes are available in PeerADSR:</p>
+<ul>
+<li>An ADSR envelope, whose shape is specified by the appropriate parameters.</li>
+<li>'Custom' envelopes, drawn using Buzz's envelope.ocx control (in the machine's Custom
+Envelopes dialog). The machine may store up to 200 of these at a time.<br>
+Note that if a Sustain point is specified in the envelope, an Off trigger (0 in the Trigger
+parameter) must be used to end the sustain phase.</li>
+<li>Envelopes based on sample data from the wavetable. You may choose any one of the 200
+samples in Buzz's wavetable.</li>
+</ul>
+
+<h2>Parameters</h2>
+<h3>Track parameters</h3>
+<ul>
+<li><b>Trigger</b> - a value of 1 triggers the envelope from the beginning.
+A value of 0 forces the currently playing envelope (if any) into its Release
+phase.</li>
+
+<li><b>Envelope Type</b> - specifies the type of envelope to be used.</li>
+
+<li><b>Envelope Number</b> - specifies either the number of the custom envelope,
+or the wavetable sample number to be used. If ADSR envelope mode is used, this
+parameter is ignored.</li>
+
+<li><b>Envelope Length</b> - specifies the total duration of custom or wavetable
+envelopes. If ADSR envelope mode is used, this parameter is ignored.</li>
+
+<li><b>Min</b> and <b>Max</b> - the minimum and maximum values of the
+envelope (given as a percentage of the controlled parameter's range)</li>
+
+<li><b>Attack</b>, <b>Decay</b>, <b>Sustain Level</b>, <b>Sustain Time</b>,
+<b>Release</b> - the characteristics of the ADSR envelope. These are ignored
+if Custom or Wvaetable envelope mode is used.<br>
+The (poorly done) ASCII diagram below shows the meaning of the parameters (in
+case you didn't already know):<br>
+
+<font color="red">
+<pre>
+ 100%      /\    Sus Time
+          /  \ <----------->
+         /    \_____________
+        /   <->             \    ^
+       /   Decay             \   | Sus Level
+ 0%   /                       \  v
+      <---->                <->
+      Attack              Release
+</pre>
+</font>
+
+Note that if Sustain Time is set to infinite, an Off trigger (0 in the Trigger
+parameter) must be used to end the sustain phase.
+</li>
+
+<li><b>Track</b> - if you assign to a [T]rack parameter, which track will be controlled.
+If it's set to All, then all the machine's tracks are controlled. If you assign to a
+[G]lobal parameter, this has no effect.</li>
+</ul>
+
+<h3>Attributes</h3>
+<ul>
+<li><b>Length Max</b> - sets the maximum possible value of the Length parameters (in ticks). The
+parameters are mapped linearly with this value at parameter value 0xFFFE, and a value of 0 ticks
+at parameter value 0x0000 (theoretically).</li>
+
+<li><b>Subtick Control</b> - sets whether the target machine will be controlled between Buzz's
+ticks. You may set this to 0 (off) if you experience compatibility problems with some machines,
+or you specifically want a "stepped" sound.</li>
+
+<li><b>MIDI Channel</b> - the MIDI channel number the machine will respond to. If this is set to
+0, MIDI functionality is disabled. If set to 17, the machine will respond to all channels.</li>
+
+<li><b>MIDI Track</b> - which track of the PeerADSR machine will be triggered by MIDI 
+notes.</li>
+
+<li><b>MIDI Want Note Offs</b> - sets whether PeerADSR responds to released notes (note off
+messages).</li>
+</ul>
+
+<p>The MIDI functionality triggers the envelope in response to all MIDI notes on the specified
+channel.</p>
+
+<h2>Other Notes</h2>
+<ul>
+<li>Note that if the PeerADSR machine is muted, it will cease to function properly. Hence do
+not mute the machine.</li>
+<li>To smooth out the parameter movements on the target machine, you should use inertia if available.
+Set it to a very short length (0.1 tick or less).</li>
+</ul>
+
+<h2>Contact</h2>
+<p>If you have comments or suggestions, or if you find any bugs
+please
+<a href="mailto:e@btd2001.freeserve.co.uk">email me</a>.<br>
+This machine is DONATIONWARE, so if you like it, send me something cool (eg CDs, hardware, money etc). 
+<a href="mailto:e@btd2001.freeserve.co.uk">Email</a> for details of how to get stuff to me.<br>
+Also visit <a href="http://btdsys.cjb.net">my website</a> (y'know, if you're bored).</p>
+
+<p><b><i>Docs and code ©Ed Powley (BTDSys), August-October 2002</i></b></p>
+
+
+</BODY>
+</HTML>

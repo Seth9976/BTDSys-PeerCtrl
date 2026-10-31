@@ -1,0 +1,136 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+#include "windows.h"
+
+#ifndef IDC_STATIC
+#define IDC_STATIC 0
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ASSIGNPAR DIALOG DISCARDABLE  0, 0, 246, 141
+STYLE DS_MODALFRAME | DS_NOFAILCREATE | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "BTDSys PeerScale - Parameter Assignment"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,120,110,14
+    COMBOBOX        IDC_MACHINECOMBO,53,26,139,95,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Machine:",IDC_STATIC,11,26,34,12,SS_CENTERIMAGE
+    LISTBOX         IDC_PARALIST,53,44,186,70,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Parameter:",IDC_STATIC,7,45,38,12,SS_CENTERIMAGE
+    CTEXT           "Machine info goes here",IDC_THISMACINFO,7,7,232,15,
+                    SS_CENTERIMAGE | SS_SUNKEN
+    PUSHBUTTON      "Cancel",IDCANCEL,129,120,110,14
+    PUSHBUTTON      "De-assign",IDC_DEASSIGN,195,26,44,12
+END
+
+IDD_SCALEDLG DIALOG DISCARDABLE  0, 0, 368, 287
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BTDSys PeerScale - Choose Scale"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,257,265,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,311,265,50,14
+    LISTBOX         IDC_LIST1,7,7,354,149,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Search:",IDC_STATIC,7,207,27,11,SS_CENTERIMAGE
+    EDITTEXT        IDC_SEARCH,36,207,325,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LONGDISPLAY,7,160,354,43,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY
+    LTEXT           "Containing",IDC_STATIC,7,230,35,9
+    COMBOBOX        IDC_NOTESCOMBO,45,230,62,55,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "C",IDC_C,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,115,247,14,15
+    CONTROL         "D",IDC_D,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,131,247,14,15
+    CONTROL         "E",IDC_E,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,147,247,14,15
+    CONTROL         "F",IDC_F,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,163,247,14,15
+    CONTROL         "G",IDC_G,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,179,247,14,15
+    CONTROL         "A",IDC_A,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,195,247,14,15
+    CONTROL         "B",IDC_B,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,211,247,14,15
+    CONTROL         "C#",IDC_CS,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,123,230,14,15
+    CONTROL         "D#",IDC_DS,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,139,230,14,15
+    CONTROL         "F#",IDC_FS,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,171,230,14,15
+    CONTROL         "G#",IDC_GS,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,187,230,14,15
+    CONTROL         "A#",IDC_AS,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,203,230,14,15
+    LTEXT           "Root =",IDC_STATIC,236,231,22,8
+    COMBOBOX        IDC_ROOTCOMBO,261,228,39,124,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_SC,"Static",SS_WHITERECT | NOT WS_VISIBLE,115,263,
+                    14,4
+    CONTROL         "",IDC_SD,"Static",SS_WHITERECT | NOT WS_VISIBLE,131,263,
+                    14,4
+    CONTROL         "",IDC_SE,"Static",SS_WHITERECT | NOT WS_VISIBLE,147,263,
+                    14,4
+    CONTROL         "",IDC_SF,"Static",SS_WHITERECT | NOT WS_VISIBLE,163,263,
+                    14,4
+    CONTROL         "",IDC_SG,"Static",SS_WHITERECT | NOT WS_VISIBLE,179,263,
+                    14,4
+    CONTROL         "",IDC_SA,"Static",SS_WHITERECT | NOT WS_VISIBLE,195,263,
+                    14,4
+    CONTROL         "",IDC_SB,"Static",SS_WHITERECT | NOT WS_VISIBLE,211,263,
+                    14,4
+    CONTROL         "",IDC_SCS,"Static",SS_BLACKRECT | NOT WS_VISIBLE,123,
+                    224,14,4
+    CONTROL         "",IDC_SDS,"Static",SS_BLACKRECT | NOT WS_VISIBLE,139,
+                    224,14,4
+    CONTROL         "",IDC_SFS,"Static",SS_BLACKRECT | NOT WS_VISIBLE,171,
+                    224,14,4
+    CONTROL         "",IDC_SGS,"Static",SS_BLACKRECT | NOT WS_VISIBLE,187,
+                    224,14,4
+    CONTROL         "",IDC_SAS,"Static",SS_BLACKRECT | NOT WS_VISIBLE,203,
+                    224,14,4
+END
+
+IDD_CUSTOMSCALEDLG DIALOG DISCARDABLE  0, 0, 361, 253
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BTDSys PeerScale - Custom Scales"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,253,237,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,309,237,50,14
+    EDITTEXT        IDC_EDIT,2,2,357,230,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_WANTRETURN | WS_VSCROLL
+END
+
+IDD_MIDIDLG DIALOG DISCARDABLE  0, 0, 343, 255
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BTDSys PeerScale - MIDI settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,237,237,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,289,237,50,14
+    LTEXT           "Channel:",IDC_STATIC,4,7,32,11
+    COMBOBOX        IDC_CHANNELCOMBO,41,4,86,207,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Mode:",IDC_STATIC,4,25,33,10
+    COMBOBOX        IDC_MODECOMBO,42,27,172,224,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXT
+//
+
+IDR_SCALES              TEXT    DISCARDABLE     "scales.txt"
+
